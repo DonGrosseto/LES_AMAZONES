@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @trip = Trip.find(params[:id])
-    @booking = Booking.where(:trip_id == @trip)
+    @booking = Booking.where(trips_id: @trip)
     @booking.destroy
     redirect_to trip_path(@trip)
   end
