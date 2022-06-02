@@ -19,4 +19,8 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings.where(trip_id: Trip.where(status: "En cours"))
   end
 
+  def index2
+    @bookings = current_user.bookings.where(trip_id: Trip.where(status: "Terminé"))
+  end
+
 end
