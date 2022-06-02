@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <%@trips.each do |trip| %>
+      <div class="col-12">
+        <div class="card-trip my-3">
+          <div class="card-trip-infos">
+            <h2>Trajet de <%= trip.user.first_name %> </h2>
+          </div>
+          <img src="https://cdn-assets.alltrails.com/static-map/production/at-map/50957820/trail-france-paris-paris-d-ouest-en-est-at-map-50957820-1642755268-414x200-2.png" />
+          <div class="card-trip-infos">
+            <div>
+              <h2> <%= trip.starting_point %> > <%= trip.ending_point %></h2>
+              <p> <%= trip.date%> <%= trip.time %></p>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+      </div>
+    <%end %>
+  </div>
+</div>
