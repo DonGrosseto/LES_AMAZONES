@@ -10,6 +10,7 @@
 
 <div class="container mt-5" style="width: 80%">
   <%= simple_form_for(@trip) do |f| %>
+  <%= p f.transport %>
     <%= f.input :starting_point , placeholder: 'Départ', label: false %>
     <%= f.input :ending_point, placeholder: 'Arrivée', label: false %>
     <%= f.input :date, placeholder: 'Date', label: false, as: :date, html5: true%>
@@ -22,7 +23,10 @@
       <%= image_tag "métro" %>
     </div>
     <div class="d-flex justify-content-around m-1" style="width:85%; text-align: center; position:relative; left: 20px" >
-      <%= f.check_box :transport, style:"border-radius: 50%"%>
+    <% if (f.check_box :transport) == true %>
+        <%= puts f  %>
+    <% end %>
+      <%= f.check_box :transport %>
       <%= f.check_box :transport %>
       <%= f.check_box :transport %>
       <%= f.check_box :transport %>
