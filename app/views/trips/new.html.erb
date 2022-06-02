@@ -1,0 +1,11 @@
+ <div class="container">
+  <%= simple_form_for(@trip) do |f| %>
+      <%= f.input :date, as: :date, html5: true%>
+      <%= f.input :starting_point %>
+      <%= f.input :ending_point %>
+      <%= f.input :time, as: :time %>
+      <%= f.input :transport %>
+      <%= f.submit class: "btn btn-outline-primary" %>
+    <% end %>
+
+ </div>
