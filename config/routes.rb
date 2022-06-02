@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :bookings, only: [:create, :destroy]
     end
   end
-  resources :bookings, only: [:index1, :index2, :show]
+  resources :bookings, only: [:index, :show]
+  get "/mybookings", to: "bookings#index2"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

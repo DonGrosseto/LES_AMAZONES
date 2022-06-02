@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     redirect_to trip_path(@trip)
   end
 
-  def index1
+  def index
     @bookings = current_user.bookings.trip.where(:status == "En cours")
   end
 
