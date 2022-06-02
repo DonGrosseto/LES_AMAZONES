@@ -1,17 +1,12 @@
-.navbar-lewagon {
+
+.navbar-amz {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   background: #DC2440;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.nav-link {
+  height: 50px;
+  padding: 5px;
   font-family: Rubik;
   font-size: 13px;
+  color: #FFFFFF;
 }
