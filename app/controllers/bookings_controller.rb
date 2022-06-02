@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = current_user.bookings.trip.where(:status == "En cours")
+    @bookings = current_user.bookings.where(trip_id: Trip.where(status: "En cours"))
   end
 
 end
