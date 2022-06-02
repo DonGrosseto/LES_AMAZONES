@@ -16,6 +16,7 @@ class TripsController < ApplicationController
     @trip.user = current_user
     @trip.chatroom = Chatroom.create
     if @trip.save
+      @booking = Booking.create(trip_id: @trip, user_id: current_user, rating_id: Rating.new)
       redirect_to trip_path(@trip)
     else
       render :new
