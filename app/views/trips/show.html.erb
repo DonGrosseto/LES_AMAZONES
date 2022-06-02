@@ -1,6 +1,20 @@
 
+
 <%= image_tag "logo.jpg", class: "small_logo"%>
 
-<h3 class="p-3">Informations sur votre trajet</h3>
+<h3 class="p-3" style="font-size: 22px">Informations sur votre trajet</h3>
 
-<p class= "text-center" style="color: $yellow">Le <%= @trip.date %> à <%= @trip.time %></p>
+<h4 class= "text-center" style="color: #DC2440; font-size: 15px">Le <%= @trip.date.strftime("%m/%d/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h4>
+<h3 class= "mt-4"> <%= @trip.starting_point.capitalize %> > <%= @trip.ending_point.capitalize %></h3>
+
+<div class="divider_bar_yellow">
+</div>
+<br>
+<div class="divider_bar_yellow">
+</div>
+<div class="container">
+
+
+
+
+</div>
