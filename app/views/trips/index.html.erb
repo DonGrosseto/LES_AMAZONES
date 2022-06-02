@@ -4,16 +4,19 @@
       <div class="col-12">
         <div class="card-trip my-3">
           <div class="card-trip-infos">
-            <h2>Trajet de <%= trip.user.first_name %> </h2>
+            <h2><strong>| Trajet de <%= trip.user.first_name %></strong></h2>
           </div>
           <img src="https://cdn-assets.alltrails.com/static-map/production/at-map/50957820/trail-france-paris-paris-d-ouest-en-est-at-map-50957820-1642755268-414x200-2.png" />
-          <div class="card-trip-infos">
-            <div>
-              <h2> <%= trip.starting_point %> > <%= trip.ending_point %></h2>
-              <p> <%= trip.date%> <%= trip.time %></p>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <div class="row mt-3 justify-content-between">
+            <div class="col-4 mx-3">
+              <p class = "my-3"> Date: <%= trip.date.mday %>/<%= trip.date.mon %></p>
+              <p class = "mb-3"> Heure: <%= trip.time.hour %>h<%= trip.time.min %></p>
             </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <div class="col-4 mx-3">
+              <p class = "my-3"> Amazones: <%= trip.users.count%></p>
+              <p class = "mb-3"> Transport: <%= trip.transport%></p>
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 80%;
   margin: auto;
+  border-radius: 16px;
+  position: relative;
 }
 
 .card-trip > img {
@@ -33,10 +35,10 @@
   position: relative;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 50%;
-  left: 50%;
-  top: -20px;
-  width: 40px;
+.card-trip .card-trip-user {
+    position: absolute;
+    right: 43%;
+    top: 130px;
+    width: 40px;
+    height: 40px;
 }
