@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
-h1 {
+h1,
+h2,
+h3 {
   color: $red;
   font-family: 'Rubik';
   font-weight: 600;
+  text-align: center;
 
 }
 
