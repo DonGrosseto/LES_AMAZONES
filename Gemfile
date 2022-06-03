@@ -33,6 +33,11 @@ gem 'font-awesome-sass', '~> 6.1.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'devise'
 
+
+# Gem Mapbox
+gem "geocoder"
+
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
