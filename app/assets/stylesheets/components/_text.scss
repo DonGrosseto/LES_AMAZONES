@@ -1,15 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
-h1 {
+h1,
+h2,
+h3 {
   color: $red;
   font-family: 'Rubik';
   font-weight: 600;
-
-
+  text-align: center;
 }
 
 p {
   font-size: 'Rubik';
   font-size: 14px;
   font-weight: 600;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h6 {
+  text-align: center;
+  color: $red;
 }

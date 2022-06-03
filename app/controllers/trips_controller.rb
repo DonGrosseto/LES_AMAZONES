@@ -1,7 +1,12 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
   def index
-    @trips = Trip.all
+
+    if params[:starting_point].present? && params[:ending_point].present?
+      @trips = Trip.where(starting_point: params[:starting_point], ending_point: params[:ending_point],date: params[:date])
+    else
+      @trips = Trip.all
+    end
   end
 
   def show
@@ -15,7 +20,9 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     @trip.chatroom = Chatroom.create
+    rating = Rating.create
     if @trip.save
+      Booking.create(trip_id: @trip.id, user_id: current_user.id, rating_id: rating.id)
       redirect_to trip_path(@trip)
     else
       render :new

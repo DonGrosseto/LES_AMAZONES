@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LESAmazones</title>
+    <title>Les Amazones</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,9 +10,20 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
   </head>
 
-  <body style="background-color: white">
+  <body style="$body-bg: $light-gray">
     <%= yield %>
   </body>
+
+
+  <div class="navbar-amz fixed-bottom d-flex w-100">
+    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+    <%= link_to "Créer un trajet", new_trip_path  %>
+    <%= link_to "Rechercher", root_path  %>
+    <%= link_to "Mes trajets", dashboard_path  %>
+    <%= image_tag "c-18_1779.jpg", class: "avatar"%>
+  </div>
+
 </html>

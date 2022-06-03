@@ -1,0 +1,85 @@
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  width: 235px;
+  margin: 0 auto;
+  border-radius: 16px;
+  position: relative;
+
+}
+
+.card-trips {
+  position: relative;
+
+}
+
+
+
+.card-trip>img {
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 18px;
+  margin: 0;
+
+  #pipe {
+    color: $yellow;
+  }
+}
+
+.card-trip p {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+
+  strong {
+    opacity: 1;
+  }
+}
+
+.card-trip-infos {
+  position: relative;
+
+  .button-yellow.card-button {
+    position: absolute;
+    left: 0;
+    transform: translateX(40%);
+    bottom: -30px;
+  }
+}
+
+.fa-solid {
+  color: $red;
+  opacity: 1;
+}
+
+
+.card-trip .card-trip-title {
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+
+.card-trip .card-trip-user {
+  position: absolute;
+  right: 43%;
+  top: 130px;
+  width: 40px;
+  height: 40px;
+}
+
+
+.map>img {
+  overflow: hidden;
+  width: 100%;
+  height: 180px;
+  margin: 0px auto;
+  border-radius: 8px;
+  object-fit: cover;
+  padding: 15px;
+
+}
