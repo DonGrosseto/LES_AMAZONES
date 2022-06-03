@@ -6,4 +6,28 @@
     <h3><%= booking.trip.time %></h3>
     <p> <%= booking.trip.transport %> </p>
   <%end %>
+
+
+  <%@bookings.each do |booking| %>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-4">
+          <%= image_tag "pieton"%>
+        </div>
+        <div class="col-6">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"> départ :<strong> <%=booking.trip.starting_point %></strong> </p>
+              <p class="card-text"> arrivée :<strong> <%=booking.trip.ending_point  %> </strong> </p>
+              <p class="card-text"> Date :<strong> <%= booking.trip.date %> </strong> </p>
+              <p class="card-text"> Heure :<strong> <%= booking.trip.time %> </strong> </p>
+              <p class="card-text"><small class="text-muted"></small></p>
+            </div>
+        </div>
+        <div class="col-2">
+        <button class="btn btn-danger">Details</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
