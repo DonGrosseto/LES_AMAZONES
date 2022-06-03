@@ -1,7 +1,13 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
   def index
-    @trips = Trip.all
+
+    if params[:starting_point].present?
+      @trips = Trip.where(starting_point: params[:starting_point])
+      raise
+    else
+      @trips = Trip.all
+    end
   end
 
   def show
@@ -12,8 +18,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    raise
-    @trip = Trip.new(trip_params)
+        @trip = Trip.new(trip_params)
     @trip.user = current_user
     @trip.chatroom = Chatroom.create
     if @trip.save
