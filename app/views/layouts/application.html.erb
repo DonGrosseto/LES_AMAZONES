@@ -16,4 +16,14 @@
   <body style="$body-bg: $light-gray">
     <%= yield %>
   </body>
+
+  <footer>
+    <div class="navbar-amz d-flex w-100">
+      <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+      <%= link_to "Créer un trajet", root_path  %>
+      <%= link_to "Rechercher un trajet", root_path  %>
+      <%= link_to "Mes trajets", root_path  %>
+      <%= image_tag "c-18_1779.jpg", width:"30px", height:"30px"%>
+    </div>
+ </footer>
 </html>
