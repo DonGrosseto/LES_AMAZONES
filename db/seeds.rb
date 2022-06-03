@@ -59,15 +59,57 @@ user4 = User.create!(
 chat1 = Chatroom.create!
 
 puts "create trips"
-Trip.create!(
+trip = Trip.create!(
   starting_point: "Paris",
   ending_point: "Neuilly",
   date: Date.new(2022, 4, 7),
   time: Time.now,
-  transport: "Train",
+  transport: "métro",
   user_id: user.id,
   chatroom_id: chat1.id
 )
+
+Booking.destroy_all
+
+puts "Creating bookings"
+rating = Rating.create
+rating2 = Rating.create
+rating3 = Rating.create
+rating4 = Rating.create
+rating5 = Rating.create
+
+Booking.create!(
+  trip_id: trip.id,
+  user_id: user.id,
+  rating_id: rating.id
+)
+
+Booking.create!(
+  trip_id: trip.id,
+  user_id: user1.id,
+  rating_id: rating2.id
+)
+
+Booking.create!(
+  trip_id: trip.id,
+  user_id: user2.id,
+  rating_id: rating3.id
+)
+
+Booking.create!(
+  trip_id: trip.id,
+  user_id: user3.id,
+  rating_id: rating4.id
+)
+
+Booking.create!(
+  trip_id: trip.id,
+  user_id: user4.id,
+  rating_id: rating5.id
+)
+
+puts "done"
+
 
 # chatroom1 = Chatroom.create
 # Trip.create(
