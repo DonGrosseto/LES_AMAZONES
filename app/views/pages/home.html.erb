@@ -22,12 +22,12 @@
           <br>
         <%= date_field_tag :date,
           params[:date],
-          class: "input-home my-2 px-4"%>
+          class: "input-home my-2 text-secondary"%>
   </div>
 
 
     <div class="d-flex justify-content-center mt-3">
-      <%=submit_tag "Rechercher", class: "button-red" %>
+      <%=submit_tag "Rechercher", class:"button-red" %>
     </div>
   <% end %>
   <h3 class="text-center mt-3 text-dark">Trajets au départ de <%= current_user.address %></h3>
