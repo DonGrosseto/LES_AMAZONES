@@ -1,7 +1,13 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
   def index
-    @trips = Trip.all
+
+    if params[:starting_point].present?
+      @trips = Trip.where(starting_point: params[:starting_point])
+      raise
+    else
+      @trips = Trip.all
+    end
   end
 
   def show
