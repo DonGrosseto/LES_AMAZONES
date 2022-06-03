@@ -23,15 +23,15 @@
     <% @trip.users.each do |user| %>
       <div class="d-flex m-2 justify-content-between">
         <div class="d-flex">
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
           <p class="m-2"><%= user.first_name %></p>
         </div>
         <p class="my-2">-</p>
         <p class="m-2"><span style="color: #DC2440" ><%= user.bookings.count %></span>
           <span style="font-weight: 400">trajets</span>
-          <% user.bookings.each do |booking| %>
-            <%= booking.rating.status %>
-          <% end %>
+
+            <%# <%= user.bookings.ratings.status %>
+           <%= "Non noté" %>
         <%= image_tag "Pouce-vert", style: "height:25px; width:25px" %>
         </p>
       </div>
