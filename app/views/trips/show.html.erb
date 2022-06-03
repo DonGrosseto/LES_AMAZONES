@@ -1,6 +1,29 @@
+
+
+<%= image_tag "logo.jpg", class: "small_logo"%>
+
+<h3 class="p-2" style="font-size: 22px">Informations sur votre trajet</h3>
+
 <div class="container">
+  <h4 class= "text-center" style="color: #DC2440; font-size: 15px">Le <%= @trip.date.strftime("%m/%d/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h4>
+  <h3 class= "mt-2"> <%= @trip.starting_point.capitalize %> > <%= @trip.ending_point.capitalize %></h3>
 
+  <div class="divider_bar_yellow ">
+  </div>
 
+  <div class="map">
+    <img src="https://cdn-assets.alltrails.com/static-map/production/at-map/50957820/trail-france-paris-paris-d-ouest-en-est-at-map-50957820-1642755268-414x200-2.png" />
+  </div>
 
+  <div class="divider_bar_yellow ">
+  </div>
 
+  <h6 class="mt-3"> Les amazones participantes</h6>
+
+  <% @trip.users.each do |user| %>
+    <div>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <p><%= user.first_name %>-<%= user.bookings.count %>trajets</p>
+    </div>
+  <%end  %>
 </div>

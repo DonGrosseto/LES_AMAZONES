@@ -18,7 +18,7 @@ class TripsController < ApplicationController
   end
 
   def create
-        @trip = Trip.new(trip_params)
+    @trip = Trip.new(trip_params)
     @trip.user = current_user
     @trip.chatroom = Chatroom.create
     if @trip.save
