@@ -1,7 +1,10 @@
 <div class="container chatroom"   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
-  <h1>#<%= @chatroom.trip.starting_point %> > <%= @chatroom.trip.ending_point %></h1>
+  <div class="chatroom-header text-center mt-2">
+    <h1>#<%= @chatroom.trip.starting_point %> > <%= @chatroom.trip.ending_point %></h1>
+    <p>le <span class="text-danger"><%= @chatroom.trip.date.strftime("%m/%d/%Y") %></span> à <span class="text-danger"><%= @chatroom.trip.time.strftime("%H:%M") %></span></p>
+  </div>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -17,6 +20,6 @@
       placeholder: "Message",
       wrapper_html: {class: "flex-grow-1"}
     %>
-    <%= f.submit "Envoyer", class: "button-red my-3" %>
+    <%= f.submit "Envoyer", class: "button-red" %>
   <% end %>
 </div>
