@@ -12,7 +12,11 @@
   </div>
 
   <div class="map">
-    <img src="https://cdn-assets.alltrails.com/static-map/production/at-map/50957820/trail-france-paris-paris-d-ouest-en-est-at-map-50957820-1642755268-414x200-2.png" />
+    <div style="width: 100%; height: 200px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 
   <div class="divider_bar_yellow ">
