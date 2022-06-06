@@ -1,8 +1,10 @@
 <div class="container">
 
-    <div class="d-flex justify-content-around">
-     <strong><%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"", style:"font-size: 13px"%></strong>
-     <%= link_to "Mes trajets précédents", mybookings_path(@bookings), class:"", style:"font-size: 13px"  %>
+    <h3> Mon tableau de bord </h3>
+
+    <div class="d-flex justify-content-around my-3">
+     <strong><%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"tab-active"%></strong>
+     <%= link_to "Mes trajets précédents", mybookings_path(@bookings), class:"tab-inactive" %>
     </div>
 
   <%@bookings.each do |booking| %>
@@ -14,15 +16,15 @@
         <div class="col-6">
             <div class="card-body">
               <h5 class="card-title"></h5>
-              <p class="card-text"> départ :<strong> <%=booking.trip.starting_point %></strong> </p>
-              <p class="card-text"> arrivée :<strong> <%=booking.trip.ending_point  %> </strong> </p>
-              <p class="card-text"> Date :<strong> <%= booking.trip.date %> </strong> </p>
-              <p class="card-text"> Heure :<strong> <%= booking.trip.time %> </strong> </p>
+              <p class="card-text"> <i class="fa-solid fa-location-dot"></i><strong> <%=booking.trip.starting_point %></strong> </p>
+              <p class="card-text"> <i class="fa-solid fa-flag-checkered"></i><strong> <%=booking.trip.ending_point  %> </strong> </p>
+              <p class="card-text"> <i class="fa-solid fa-calendar-day"></i>  <%= booking.trip.date %> </strong> </p>
+              <p class="card-text"> <i class="fa-solid fa-clock"></i><strong> <%= booking.trip.time %> </strong> </p>
               <p class="card-text"><small class="text-muted"></small></p>
             </div>
         </div>
         <div class="col-3">
-        <button class="btn btn-danger">Détails</button>
+        <button class="btn btn-danger"><i class="fa-solid fa-circle-info display-1 text-white" ></i></button>
         </div>
       </div>
     </div>

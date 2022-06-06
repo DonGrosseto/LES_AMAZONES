@@ -6,6 +6,20 @@ height: 100px;
 box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15) ;
 }
 
+.tab-active{
+
+  font-size: 13px;
+  color: $red;
+  border-bottom: 1px solid red;
+}
+
+.tab-inactive{
+
+  font-size: 13px;
+  font-weight: bold;
+  color: $red-opacity
+}
+
 // Overwriting BS Card class
 
 .card-text {
