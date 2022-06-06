@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :trips, only: [:index, :show, :new, :create, :edit, :update] do
     member do
       resources :bookings, only: [:create, :destroy]
-      resources :chatrooms, only: :show
+      resources :chatrooms, only: :show do
+        resources :messages, only: :create
+      end
     end
   end
   resources :bookings, only: [:show]
