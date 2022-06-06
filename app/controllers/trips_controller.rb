@@ -9,6 +9,7 @@ class TripsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find_by(trip: @trip, user: current_user )
     @points = {start:[@trip.latitude_start, @trip.longitude_start], end:[@trip.latitude_end, @trip.longitude_end]}
     @markers = @points.map do |point|
       point.flatten!
@@ -28,7 +29,7 @@ class TripsController < ApplicationController
     @trip.user = current_user
     @trip.chatroom = Chatroom.create
     if @trip.save
-      @booking = Booking.create(trip_id: @trip, user_id: current_user, rating_id: Rating.new)
+      @booking = Booking.create(trip_id: @trip.id, user_id: current_user.id, rating_id: rating.id)
       redirect_to trip_path(@trip)
     else
       render :new

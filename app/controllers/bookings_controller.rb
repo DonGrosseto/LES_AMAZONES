@@ -2,15 +2,16 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new
-    @booking.trip = Trip.find(params[:id])
+    @booking.trip = Trip.find(params[:trip_id])
     @booking.user = current_user
     @booking.rating = Rating.new
     @booking.save
+    redirect_to trip_path(params[:trip_id])
   end
 
   def destroy
-    @trip = Trip.find(params[:id])
-    @booking = Booking.where(trips_id: @trip)
+    @trip = Trip.find(params[:trip_id])
+    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to trip_path(@trip)
   end

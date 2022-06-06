@@ -40,5 +40,12 @@
         </p>
       </div>
     <%end  %>
+
   </div>
+    <% if @booking  %>
+      <div class="button-yellow my-2 w-50" style="margin: 0 auto"><%= link_to "Chat" %></div>
+      <div class="button-red my-2 w-50" style="margin: 0 auto"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete %></div>
+    <% else %>
+      <div class="button-red my-2 w-50" style="margin: 0 auto"><%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post %></div>
+    <%end %>
 </div>
