@@ -27,7 +27,7 @@
     <% @trip.users.each do |user| %>
       <div class="d-flex m-2 justify-content-between">
         <div class="d-flex">
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
+          <%= cl_image_tag user.photo.key, class: "avatar"%>
           <p class="m-2"><%= user.first_name %></p>
         </div>
         <p class="my-2">-</p>

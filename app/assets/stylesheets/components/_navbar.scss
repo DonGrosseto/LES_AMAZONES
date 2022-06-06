@@ -8,4 +8,17 @@
   font-family: Rubik;
   font-size: 13px;
   color: #FFFFFF;
+  text-decoration: none;
+}
+
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.navbar-item-active {
+  color: white;
+  text-decoration: none;
+  opacity: 1;
 }
