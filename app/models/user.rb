@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :ratings, through: :bookings
   has_many :messages
   has_many :trips, dependent: :destroy
+
+  has_one_attached :photo
 end

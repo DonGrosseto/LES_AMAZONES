@@ -20,12 +20,19 @@
   </body>
 
 
-  <div class="navbar-amz fixed-bottom d-flex w-100">
+  <div class="navbar-amz fixed-bottom w-100">
     <%= image_tag "etoile.png", width:"30px", height:"30px"%>
-    <%= link_to "Créer un trajet", new_trip_path  %>
-    <%= link_to "Rechercher", root_path  %>
-    <%= link_to "Mes trajets", dashboard_path  %>
-    <%= image_tag "c-18_1779.jpg", class: "avatar"%>
+    <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
+    <%= link_to "Rechercher", root_path, class:"navbar-item"  %>
+    <%= link_to "Mes trajets", dashboard_path, class:"navbar-item-active"   %>
+    <div class="d-flex">
+    <%if user_signed_in? %>
+      <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+    <%else %>
+      <%= link_to "Se Connecter", new_user_session_path, class: "nav-link" %>
+    <%end %>
+    </div>
   </div>
 
 </html>
