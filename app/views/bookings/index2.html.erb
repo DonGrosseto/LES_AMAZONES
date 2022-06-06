@@ -1,14 +1,11 @@
 <div class="container">
 
+  <h2> Dashbboard index 2  </h2>
 
-<h2> Dashbboard index 2  </h2>
-
-<div class="container">
-
-<div class="d-flex justify-content-around">
-<strong><%= link_to "Mes trajets précédents", mybookings_path(@bookings), class:"", style:"font-size: 12px"  %></strong>
-<%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"", style:"font-size: 12px" %>
-</div>
+    <div class="d-flex justify-content-around">
+     <strong><%= link_to "Mes trajets précédents", mybookings_path(@bookings), style:"font-size: 13px"  %></strong>
+     <%= link_to "Mes trajets en cours", dashboard_path(@bookings), style:"font-size: 13px" %>
+    </div>
 
 
   <%@bookings.each do |booking| %>
