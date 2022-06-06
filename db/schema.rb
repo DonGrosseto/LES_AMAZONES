@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_03_130451) do
+ActiveRecord::Schema.define(version: 2022_06_03_144442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,10 +68,10 @@ ActiveRecord::Schema.define(version: 2022_06_03_130451) do
     t.bigint "chatroom_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "latitude_start"
-    t.float "longitude_start"
-    t.float "latitude_end"
-    t.float "longitude_end"
+    t.float "latitude_start", default: 0.2
+    t.float "longitude_start", default: 0.2
+    t.float "latitude_end", default: 0.2
+    t.float "longitude_end", default: 0.2
     t.index ["chatroom_id"], name: "index_trips_on_chatroom_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
