@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :trips, only: [:index, :show, :new, :create, :edit, :update] do
-    member do
-      resources :bookings, only: [:create, :destroy]
-    end
+
+    resources :bookings, only: [:create, :destroy]
+
   end
   resources :bookings, only: [:show]
   get "/bookings", to: "bookings#index", as: :dashboard
