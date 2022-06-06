@@ -15,7 +15,7 @@ class TripsController < ApplicationController
       point.flatten!
       {
         lat: point[1],
-        lng: point[2]
+        lng: point[2],
       }
     end
   end
