@@ -8,7 +8,7 @@
   <h4 class= "text-center" style="color: #DC2440; font-size: 15px">Le <%= @trip.date.strftime("%m/%d/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h4>
   <h3 class= "mt-2"> <%= @trip.starting_point.capitalize %> > <%= @trip.ending_point.capitalize %></h3>
 
-  <div class="divider_bar_yellow ">
+  <div class="divider_bar_yellow my-2 ">
   </div>
 
   <div class="map">
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="divider_bar_yellow ">
+  <div class="divider_bar_yellow my-2 ">
   </div>
 
   <h6 class="mt-3"> Les amazones participantes</h6>
@@ -27,7 +27,7 @@
     <% @trip.users.each do |user| %>
       <div class="d-flex m-2 justify-content-between">
         <div class="d-flex">
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar" />
+          <%= cl_image_tag user.photo.key, class: "avatar"%>
           <p class="m-2"><%= user.first_name %></p>
         </div>
         <p class="my-2">-</p>
@@ -43,9 +43,11 @@
 
   </div>
     <% if @booking  %>
-      <div class="button-yellow my-2 w-50" style="margin: 0 auto"><%= link_to "Chat" %></div>
-      <div class="button-red my-2 w-50" style="margin: 0 auto"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete %></div>
+      <div class="text-center"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete, class: "button-red" %></div>
+      <div class="text-center"><%= link_to "Chat", trip_bookings_path(@trip), class: "button-yellow" %></div>
     <% else %>
-      <div class="button-red my-2 w-50" style="margin: 0 auto"><%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post %></div>
+      <div class="text-center">
+        <%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post, class: "button-red" %>
+      </div>
     <%end %>
 </div>
