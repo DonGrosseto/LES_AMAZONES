@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   end
 
+  post "/users/:id/upvote", to: "users#upvote", as: :upvote
+  post "/users/:id/downvote", to: "users#downvote", as: :downvote
+
   resources :bookings, only: [:show]
   get "/bookings", to: "bookings#index", as: :dashboard
   get "/mybookings", to: "bookings#index2"
