@@ -1,4 +1,4 @@
-<%= image_tag "logo.jpg", style: "width: 100%" %>
+<%= image_tag "logofinal.png", style: "width: 100%" %>
 
 <div>
   <h1 class="text-center m-2">Les AMAZONES</h1>
@@ -29,4 +29,15 @@
       <%= f.submit "Créer un trajet", class: "button-red" %>
     </div>
   <% end %>
+</div>
+<div class="navbar-amz fixed-bottom w-100">
+  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item-active"  %>
+  <%= link_to "Rechercher", root_path, class:"navbar-item"  %>
+  <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
+  <% if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% else %>
+    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
 </div>

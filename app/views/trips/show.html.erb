@@ -1,6 +1,6 @@
 
 
-<%= image_tag "logo.jpg", class: "small_logo"%>
+<%= image_tag "logofinal.png", class: "small_logo"%>
 
 <h3 class="p-2" style="font-size: 22px">Informations sur votre trajet</h3>
 
@@ -50,4 +50,15 @@
         <%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post, class: "button-red" %>
       </div>
     <%end %>
+</div>
+<div class="navbar-amz fixed-bottom w-100">
+  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
+  <%= link_to "Rechercher", root_path, class:"navbar-item-active"  %>
+  <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
+  <% if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% else %>
+    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
 </div>
