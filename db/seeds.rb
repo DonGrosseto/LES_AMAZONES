@@ -11,50 +11,53 @@ Trip.destroy_all
 User.destroy_all
 
 puts "create users"
-user = User.create!(
-  email: "marie@gmail",
+file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80')
+amaury = User.new(
+  email: "amaury@gmail",
   password: "azerty",
-  first_name: "Marie",
+  first_name: "Amaury",
   last_name: "Dupont",
   address: "Lille",
   phone_number: "0102030405"
 )
+amaury.photo.attach(io: file, filename: 'amaury.png', content_type: 'image/png')
+amaury.save
 
-user1 = User.create!(
-  email: "margaux@gmail",
+file = URI.open('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=800')
+benjamin = User.new(
+  email: "benjamin@gmail",
   password: "azerty",
-  first_name: "Margaux",
+  first_name: "Benjamin",
   last_name: "Durand",
   address: "Loos",
   phone_number: "0102030406"
 )
+benjamin.photo.attach(io: file, filename: 'benjamin.png', content_type: 'image/png')
+benjamin.save
 
-user2 = User.create!(
-  email: "hloe@gmail",
+file = URI.open('https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=800')
+marco = User.new(
+  email: "marco@gmail",
   password: "azerty",
-  first_name: "Chloe",
+  first_name: "Marco",
   last_name: "Dubard",
   address: "Lomme",
   phone_number: "0102030407"
 )
+marco.photo.attach(io: file, filename: 'marco.png', content_type: 'image/png')
+marco.save
 
-user3 = User.create!(
-  email: "marion@gmail",
+file = URI.open("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800")
+mickael = User.create!(
+  email: "mickael@gmail",
   password: "azerty",
-  first_name: "Marion",
+  first_name: "Mickael",
   last_name: "Lemoine",
   address: "Lille",
   phone_number: "0102030408"
 )
-
-user4 = User.create!(
-  email: "marine@gmail",
-  password: "azerty",
-  first_name: "Marine",
-  last_name: "Dupert",
-  address: "Lille",
-  phone_number: "0102030409"
-)
+mickael.photo.attach(io: file, filename: 'mickael.png', content_type: 'image/png')
+mickael.save
 
 chat1 = Chatroom.create!
 
@@ -62,10 +65,21 @@ puts "create trips"
 trip = Trip.create!(
   starting_point: "Paris",
   ending_point: "Neuilly",
-  date: Date.new(2022, 4, 7),
+  date: Date.new(2022, 7, 7),
   time: Time.now,
   transport: "métro",
-  user_id: user.id,
+  user_id: amaury.id,
+  chatroom_id: chat1.id
+)
+
+trip2 = Trip.create!(
+  starting_point: "Lille",
+  ending_point: "Loos",
+  date: Date.new(2022, 4, 4),
+  time: Time.now,
+  transport: "piéton",
+  status: "Terminé",
+  user_id: marco.id,
   chatroom_id: chat1.id
 )
 
@@ -76,37 +90,33 @@ rating = Rating.create
 rating2 = Rating.create
 rating3 = Rating.create
 rating4 = Rating.create
-rating5 = Rating.create
+
 
 Booking.create!(
   trip_id: trip.id,
-  user_id: user.id,
+  user_id: amaury.id,
   rating_id: rating.id
 )
 
 Booking.create!(
   trip_id: trip.id,
-  user_id: user1.id,
+  user_id: benjamin.id,
   rating_id: rating2.id
 )
 
 Booking.create!(
-  trip_id: trip.id,
-  user_id: user2.id,
+  trip_id: trip2.id,
+  user_id: marco.id,
   rating_id: rating3.id
 )
 
 Booking.create!(
-  trip_id: trip.id,
-  user_id: user3.id,
+  trip_id: trip2.id,
+  user_id: mickael.id,
   rating_id: rating4.id
 )
 
-Booking.create!(
-  trip_id: trip.id,
-  user_id: user4.id,
-  rating_id: rating5.id
-)
+
 
 puts "done"
 

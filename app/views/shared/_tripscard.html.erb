@@ -6,7 +6,7 @@
             <h2 class="text-dark"><strong><span id="pipe">|</span> <%= trip.starting_point %> > <%= trip.ending_point %></strong></h2>
           </div>
           <img src="https://cdn-assets.alltrails.com/static-map/production/at-map/50957820/trail-france-paris-paris-d-ouest-en-est-at-map-50957820-1642755268-414x200-2.png" />
-           <%= cl_image_tag user.photo.key, class:"card-trip-user avatar-bordered" %>
+           <%= cl_image_tag trip.user.photo.key, class:"card-trip-user avatar-bordered" %>
           <div class="mx-3 mb-5 card-trip-infos">
             <div class="d-flex justify-content-between">
               <p class = "mt-3"> Date : <strong><%= trip.date.mday %>/<%= trip.date.mon %> </strong> <i class="fa-solid fa-calendar"></i></p>
