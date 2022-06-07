@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
 
   def upvote
-    self.rating.upvote += 1
+    rating = Rating.find(params[:id])
+    rating.upvote += 1
+    rating.save
   end
 
   def downvote
-    self.rating.downvote += 1
-  end
-
-  def allvote
-    votes = self.rating.upvote + self.rating.downvote
-    self.rating.upvote / votes * 100
+    rating = Rating.find(params[:id])
+    rating.downvote += 1
+    rating.save
   end
 
 end

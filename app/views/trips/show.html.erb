@@ -33,7 +33,11 @@
         <p class="my-2">-</p>
         <p class="m-2"><span style="color: #DC2440" ><%= user.bookings.count %></span>
           <span style="font-weight: 400">trajets</span>
-          <%= user.allvote %>%
+          <% if user.rating.upvote == 0 %>
+            <span>Non noté</span>
+          <%else %>
+            <%= user.rating.allvote %>%
+          <%end %>
           <%= image_tag "Pouce-vert.png", style: "height:25px; width:25px" %>
         </p>
       </div>

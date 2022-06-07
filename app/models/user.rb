@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :trips, dependent: :destroy
   belongs_to :rating
   has_one_attached :photo
+
+
 end
