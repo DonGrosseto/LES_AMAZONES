@@ -70,6 +70,7 @@ mickael.photo.attach(io: file, filename: 'mickael.png', content_type: 'image/png
 mickael.save
 
 chat1 = Chatroom.create!
+chat2 = Chatroom.create!
 
 puts "create trips"
 trip = Trip.create!(
@@ -90,7 +91,7 @@ trip2 = Trip.create!(
   transport: "piéton",
   status: "Terminé",
   user_id: marco.id,
-  chatroom_id: chat1.id
+  chatroom_id: chat2.id
 )
 
 Booking.destroy_all
