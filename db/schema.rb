@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2022_06_06_131634) do
   create_table "chatrooms", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "trip_id"
+    t.index ["trip_id"], name: "index_chatrooms_on_trip_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -125,6 +127,7 @@ ActiveRecord::Schema.define(version: 2022_06_06_131634) do
   add_foreign_key "bookings", "ratings"
   add_foreign_key "bookings", "trips"
   add_foreign_key "bookings", "users"
+  add_foreign_key "chatrooms", "trips"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reports", "bookings"
