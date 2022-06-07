@@ -1,5 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+
 
 export default class extends Controller {
   static values = {
@@ -16,6 +18,7 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
   }
   #addMarkersToMap() {
     this.markersValue.forEach((trip) => {
