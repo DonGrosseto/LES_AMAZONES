@@ -5,10 +5,20 @@ require "date"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# puts "destroy messages"
+# Message.destroy_all
 
-Trip.destroy_all
+# puts "destroy chatroom"
+# Chatroom.destroy_all
+# puts "chatroom done"
 
+# puts "destroy trips"
+# Trip.destroy_all
+
+puts "destroy all"
 User.destroy_all
+
+puts "all destroy"
 
 puts "create users"
 file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80')
@@ -60,6 +70,7 @@ mickael.photo.attach(io: file, filename: 'mickael.png', content_type: 'image/png
 mickael.save
 
 chat1 = Chatroom.create!
+chat2 = Chatroom.create!
 
 puts "create trips"
 trip = Trip.create!(
@@ -80,7 +91,7 @@ trip2 = Trip.create!(
   transport: "piéton",
   status: "Terminé",
   user_id: marco.id,
-  chatroom_id: chat1.id
+  chatroom_id: chat2.id
 )
 
 Booking.destroy_all
