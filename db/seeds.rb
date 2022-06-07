@@ -20,6 +20,11 @@ User.destroy_all
 
 puts "all destroy"
 
+rating = Rating.create
+rating2 = Rating.create
+rating3 = Rating.create
+rating4 = Rating.create
+
 puts "create users"
 file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2960&q=80')
 amaury = User.new(
@@ -28,7 +33,8 @@ amaury = User.new(
   first_name: "Amaury",
   last_name: "Dupont",
   address: "Lille",
-  phone_number: "0102030405"
+  phone_number: "0102030405",
+  rating_id: rating.id
 )
 amaury.photo.attach(io: file, filename: 'amaury.png', content_type: 'image/png')
 amaury.save
@@ -40,7 +46,8 @@ benjamin = User.new(
   first_name: "Benjamin",
   last_name: "Durand",
   address: "Loos",
-  phone_number: "0102030406"
+  phone_number: "0102030406",
+  rating_id: rating2.id
 )
 benjamin.photo.attach(io: file, filename: 'benjamin.png', content_type: 'image/png')
 benjamin.save
@@ -52,7 +59,8 @@ marco = User.new(
   first_name: "Marco",
   last_name: "Dubard",
   address: "Lomme",
-  phone_number: "0102030407"
+  phone_number: "0102030407",
+  rating_id: rating3.id
 )
 marco.photo.attach(io: file, filename: 'marco.png', content_type: 'image/png')
 marco.save
@@ -64,7 +72,8 @@ mickael = User.create!(
   first_name: "Mickael",
   last_name: "Lemoine",
   address: "Lille",
-  phone_number: "0102030408"
+  phone_number: "0102030408",
+  rating_id: rating4.id
 )
 mickael.photo.attach(io: file, filename: 'mickael.png', content_type: 'image/png')
 mickael.save
@@ -97,34 +106,27 @@ trip2 = Trip.create!(
 Booking.destroy_all
 
 puts "Creating bookings"
-rating = Rating.create
-rating2 = Rating.create
-rating3 = Rating.create
-rating4 = Rating.create
+
 
 
 Booking.create!(
   trip_id: trip.id,
   user_id: amaury.id,
-  rating_id: rating.id
 )
 
 Booking.create!(
   trip_id: trip.id,
   user_id: benjamin.id,
-  rating_id: rating2.id
 )
 
 Booking.create!(
   trip_id: trip2.id,
   user_id: marco.id,
-  rating_id: rating3.id
 )
 
 Booking.create!(
   trip_id: trip2.id,
   user_id: mickael.id,
-  rating_id: rating4.id
 )
 
 
