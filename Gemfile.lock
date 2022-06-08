@@ -240,6 +240,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.6.0)
     regexp_parser (2.5.0)
     remotipart (1.4.4)
     responders (3.0.1)
@@ -337,6 +338,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.6)
   rails_admin (~> 2.0)
+  redis (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   serviceworker-rails
