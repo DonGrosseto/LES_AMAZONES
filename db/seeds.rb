@@ -15,10 +15,16 @@ Rating.destroy_all
 puts "Creating bookings"
 
 rating = Rating.create
+rating1 = Rating.create
 rating2 = Rating.create
 rating3 = Rating.create
 rating4 = Rating.create
 rating5 = Rating.create
+rating6 = Rating.create
+rating7 = Rating.create
+rating8 = Rating.create
+rating9 = Rating.create
+rating10 = Rating.create
 
 puts "create users"
 
@@ -112,7 +118,7 @@ user7 = User.create!(
 
 URI.open("https://unsplash.com/photos/niH7Z81S44g")
 user8 = User.create!(
-  email: "megane@gmail.com",
+  email: "melanie@gmail.com",
   password: "azerty",
   first_name: "Mélanie",
   last_name: "lederé",
@@ -126,7 +132,7 @@ user9 = User.create!(
   email: "julie@gmail.com",
   password: "azerty",
   first_name: "Julie",
-  last_name: "Dubarry",
+  last_name: "Delpierre",
   address: "hellemes",
   phone_number: "0104506542",
   rating_id: rating9.id
@@ -146,13 +152,13 @@ user10 = User.create!(
 puts "create trips"
 
 trip = Trip.create!(
-  starting_point: "Paris",
-  ending_point: "Neuilly",
+  starting_point: "Haubourdin",
+  ending_point: "Lomme",
   date: Date.new(2022, 4, 7),
   time: Time.now,
-  transport: "métro",
+  transport: "vélo",
   user_id: user.id,
-  chatroom_id: chat1.id
+  chatroom_id: chatroom1.id
 )
 
 trip1 = Trip.create!(
@@ -160,50 +166,71 @@ trip1 = Trip.create!(
   ending_point: "Lomme",
   date: Date.new(2022, 4, 8),
   time: Time.now,
-  transport: "vélo",
+  transport: "piéton",
   user_id: user.id,
-  chatroom_id: chat1.id
+  chatroom_id: chatroom2.id
 )
 
 trip2 = Trip.create!(
-  starting_point: "Lille",
-  ending_point: "Lomme",
+  starting_point: "Herlies",
+  ending_point: "Lille",
   date: Date.new(2022, 4, 9),
   time: Time.now,
   transport: "voiture",
   user_id: user.id,
-  chatroom_id: chat1.id
+  chatroom_id: chatroom3.id
 )
 
 trip3 = Trip.create!(
   starting_point: "Lille",
-  ending_point: "Lomme",
+  ending_point: "Paris",
   date: Date.new(2022, 4, 10),
   time: Time.now,
-  transport: "métro",
+  transport: "voiture",
   user_id: user.id,
-  chatroom_id: chat1.id
+  chatroom_id: chatroom4.id
 )
 
 trip4 = Trip.create!(
   starting_point: "Lille",
-  ending_point: "Lomme",
+  ending_point: "Loos",
   date: Date.new(2022, 4, 2),
   time: Time.now,
-  transport: "métro",
+  transport: "vélo",
   user_id: user.id,
-  chatroom_id: chat1.id
+  chatroom_id: chatroom5.id
+)
+
+trip5 = Trip.create!(
+  starting_point: "Herlies",
+  ending_point: "Lompret",
+  date: Date.new(2022, 4, 2),
+  time: Time.now,
+  transport: "taxi",
+  user_id: user.id,
+  chatroom_id: chatroom6.id
+)
+
+trip5 = Trip.create!(
+  starting_point: "Paris 7éme",
+  ending_point: "Paris 9éme",
+  date: Date.new(2022, 4, 12),
+  time: Time.now,
+  transport: "taxi",
+  user_id: user.id,
+  chatroom_id: chatroom7.id
 )
 
 trip5 = Trip.create!(
   starting_point: "Lille",
-  ending_point: "Lomme",
-  date: Date.new(2022, 4, 2),
+  ending_point: "Wambrechies",
+  date: Date.new(2022, 4, 12),
   time: Time.now,
   transport: "métro",
   user_id: user.id,
-  chatroom_id: chat1.id
+  chatroom_id: chatroom8.id
 )
+
 Booking.destroy_all
 
 Booking.create!(
@@ -235,22 +262,22 @@ puts "bookings done"
 
 chatroom1 = Chatroom.create
 Trip.create(
-  starting_point: "Paris",
-  ending_point: "Neuilly",
+  starting_point: "Haubourdin",
+  ending_point: "Lomme",
   date: Date.new(2022, 4, 7),
   time: Time.now,
-  transport: "Train",
+  transport: "vélo",
   user_id: user.id,
   chatroom_id: chatroom.id
 )
 
 chatroom2 = Chatroom.create
 Trip.create(
-  starting_point: "Paris",
-  ending_point: "Nanterre",
-  date: Date.new(2022, 4, 7),
+  starting_point: "Lille",
+  ending_point: "Lomme",
+  date: Date.new(2022, 4, 8),
   time: Time.now,
-  transport: "Pieton",
+  transport: "pieton",
   user_id: user.id,
   chatroom_id: chatroom.id
 )
@@ -281,9 +308,20 @@ chatroom5 = Chatroom.create
 Trip.create(
   starting_point: "Lille",
   ending_point: "Wambrechies",
-  date: Date.new(2022, 4, 13),
+  date: Date.new(2022, 4, 12),
   time: Time.now,
   transport: "métro",
+  user_id: user.id,
+  chatroom_id: chatroom.id
+)
+
+chatroom6 = Chatroom.create
+Trip.create(
+  starting_point: "Herlies",
+  ending_point: "Lompret",
+  date: Date.new(2022, 4, 2),
+  time: Time.now,
+  transport: "taxi",
   user_id: user.id,
   chatroom_id: chatroom.id
 )
