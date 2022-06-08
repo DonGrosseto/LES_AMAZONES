@@ -10,14 +10,27 @@
 
   font-size: 13px;
   color: $red;
+  &:hover{
+    color: $red;
+  }
 
+}
+
+.dashboard-icon {
+  img{
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .tab-inactive {
 
   font-size: 13px;
   font-weight: bold;
-  color: $red-opacity
+  color: $red-opacity;
+  &:hover{
+    color: $red-opacity;
+  }
 }
 
 // Overwriting BS Card class

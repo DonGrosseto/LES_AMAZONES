@@ -9,6 +9,10 @@
   border-radius: 4px;
   font-size: 14px;
   text-align: center;
+  &:hover{
+    color: white;
+    background-color: $yellow;
+  }
 }
 
 .btn-danger {
@@ -30,4 +34,8 @@
   border: none;
   text-align: center;
   margin: 0 auto;
+  &:hover{
+    color: white;
+    background-color: $red;
+  }
 }
