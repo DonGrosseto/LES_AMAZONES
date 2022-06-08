@@ -327,15 +327,15 @@ Booking.destroy_all
 
 Booking.create!(
   trip_id: trip.id,
-  user_id: user.id,
+  user_id: marie.id,
 )
 Booking.create!(
   trip_id: trip1.id,
-  user_id: user.id,
+  user_id: marie.id,
 )
 Booking.create!(
   trip_id: trip2.id,
-  user_id: user.id,
+  user_id: marie.id,
 )
 
 Booking.create!(
