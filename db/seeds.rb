@@ -23,7 +23,7 @@ rating5 = Rating.create
 puts "create users"
 
 user = User.create!(
-  email: "marie@gmail",
+  email: "marie@gmail.com",
   password: "azerty",
   first_name: "Marie",
   last_name: "Dupont",
@@ -33,7 +33,7 @@ user = User.create!(
 )
 
 user1 = User.create!(
-  email: "margaux@gmail",
+  email: "margaux@gmail.com",
   password: "azerty",
   first_name: "Margaux",
   last_name: "Durand",
@@ -43,7 +43,7 @@ user1 = User.create!(
 )
 
 user2 = User.create!(
-  email: "chloe@gmail",
+  email: "chloe@gmail.com",
   password: "azerty",
   first_name: "Chloe",
   last_name: "Dubard",
@@ -53,7 +53,7 @@ user2 = User.create!(
 )
 
 user3 = User.create!(
-  email: "marion@gmail",
+  email: "marion@gmail.com",
   password: "azerty",
   first_name: "Marion",
   last_name: "Lemoine",
@@ -63,7 +63,7 @@ user3 = User.create!(
 )
 
 user4 = User.create!(
-  email: "marine@gmail",
+  email: "marine@gmail.com",
   password: "azerty",
   first_name: "Marine",
   last_name: "Dupert",
@@ -73,7 +73,7 @@ user4 = User.create!(
 )
 
 user5 = User.create!(
-  email: "marjorie@gmail",
+  email: "marjorie@gmail.com",
   password: "azerty",
   first_name: "Marjorie",
   last_name: "Delbrand",
@@ -82,16 +82,55 @@ user5 = User.create!(
   rating_id: rating5.id
 )
 
-user5 = User.create!(
-  email: "megane@gmail",
+user6 = User.create!(
+  email: "megane@gmail.com",
   password: "azerty",
   first_name: "Megane",
-  last_name: "Delbrand",
-  address: "",
-  phone_number: "0104556542",
-  rating_id: rating5.id
+  last_name: "Dubarry",
+  address: "hellemes",
+  phone_number: "0104506542",
+  rating_id: rating6.id
 )
-chat1 = Chatroom.create!
+
+user7 = User.create!(
+  email: "clemence@gmail.com",
+  password: "azerty",
+  first_name: "Clémence",
+  last_name: "Dessac",
+  address: "roubaix",
+  phone_number: "0104446542",
+  rating_id: rating7.id
+)
+
+user8 = User.create!(
+  email: "megane@gmail.com",
+  password: "azerty",
+  first_name: "Mélanie",
+  last_name: "lederé",
+  address: "hellemes",
+  phone_number: "0104506542",
+  rating_id: rating8.id
+)
+
+user9 = User.create!(
+  email: "julie@gmail.com",
+  password: "azerty",
+  first_name: "Julie",
+  last_name: "Dubarry",
+  address: "hellemes",
+  phone_number: "0104506542",
+  rating_id: rating9.id
+)
+
+user10 = User.create!(
+  email: "stephanie@gmail.com",
+  password: "azerty",
+  first_name: "Stéphanie",
+  last_name: "holoski",
+  address: "haubourdin",
+  phone_number: "0344506542",
+  rating_id: rating10.id
+)
 
 puts "create trips"
 
@@ -158,12 +197,12 @@ Booking.destroy_all
 
 Booking.create!(
   trip_id: trip.id,
-  user_id: user1.id, user2.id
+  user_id: user1.id,
 )
 
 Booking.create!(
   trip_id: trip1.id,
-  user_id: user3.id, user4.id
+  user_id: user3.id,
 )
 
 Booking.create!(
@@ -181,7 +220,7 @@ Booking.create!(
   user_id: user4.id
 )
 
-puts "done"
+puts "bookings done"
 
 chatroom1 = Chatroom.create
 Trip.create(
