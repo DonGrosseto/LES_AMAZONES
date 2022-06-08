@@ -120,8 +120,8 @@ megane = User.create!(
   rating_id: rating6.id
 )
 
-margaux.photo.attach(io: file, filename: ‘margaux.png’, content_type: ‘image/png’)
-margaux.save
+megane.photo.attach(io: file, filename: ‘megane.png’, content_type: ‘image/png’)
+megane.save
 
 URI.open("https://unsplash.com/photos/KrR7xEn4HV8")
 clemence = User.create!(
@@ -161,6 +161,9 @@ julie = User.create!(
   phone_number: "0104506542",
   rating_id: rating9.id
 )
+
+julie.photo.attach(io: file, filename: ‘julie.png’, content_type: ‘image/png’)
+julie.save
 
 URI.open("https://unsplash.com/photos/EGXESvDSAFY")
 stephanie = User.create!(
