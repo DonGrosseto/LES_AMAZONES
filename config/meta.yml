@@ -1,0 +1,6 @@
+meta_product_name: "Les Amazones"
+meta_title: "Les Amazones - Mesdames , déplacez vous en sécurité quand vous voulez "
+meta_description: "Application vous permettant de vous déplacez à plusieurs sur un trajet défini.
+Choisissez un parcours des utilisatrices ou créer le votre"
+meta_image: "logo.jpg" # should exist in `app/assets/images/`
+twitter_account: "@les_Amazones_twitter_account"   # required for Twitter Cards
