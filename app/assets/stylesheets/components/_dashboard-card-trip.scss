@@ -10,6 +10,9 @@
 
   font-size: 13px;
   color: $red;
+  &:hover{
+    color: $red;
+  }
 
 }
 
@@ -17,7 +20,10 @@
 
   font-size: 13px;
   font-weight: bold;
-  color: $red-opacity
+  color: $red-opacity;
+  &:hover{
+    color: $red;
+  }
 }
 
 // Overwriting BS Card class
