@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.trip = Trip.find(params[:trip_id])
     @booking.user = current_user
-    @booking.rating = Rating.new
     @booking.save
     redirect_to trip_path(params[:trip_id])
   end
