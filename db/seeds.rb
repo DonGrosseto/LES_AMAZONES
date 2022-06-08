@@ -39,8 +39,8 @@ user = User.create!(
   rating_id: rating.id
 )
 
-URI.open("https://unsplash.com/photos/RDcEWH5hSDE")
-user1 = User.create!(
+file = URI.open("https://unsplash.com/photos/RDcEWH5hSDE")
+margaux = User.create!(
   email: "margaux@gmail.com",
   password: "azerty",
   first_name: "Margaux",
@@ -50,8 +50,11 @@ user1 = User.create!(
   rating_id: rating1.id
 )
 
-URI.open("https://unsplash.com/photos/RtVGS4vGkgM")
-user2 = User.create!(
+margaux.photo.attach(io: file, filename: ‘margaux.png’, content_type: ‘image/png’)
+margaux.save
+
+file = URI.open("https://unsplash.com/photos/RtVGS4vGkgM")
+chloe = User.create!(
   email: "chloe@gmail.com",
   password: "azerty",
   first_name: "Chloe",
@@ -61,8 +64,11 @@ user2 = User.create!(
   rating_id: rating2.id
 )
 
-URI.open("https://unsplash.com/photos/00ByEXKcSkA")
-user3 = User.create!(
+chloe.photo.attach(io: file, filename: ‘chloe.png’, content_type: ‘image/png’)
+chloe.save
+
+file = URI.open("https://unsplash.com/photos/00ByEXKcSkA")
+marion = User.create!(
   email: "marion@gmail.com",
   password: "azerty",
   first_name: "Marion",
@@ -72,8 +78,11 @@ user3 = User.create!(
   rating_id: rating3.id
 )
 
-URI.open("https://unsplash.com/photos/AzVexpHvuKY")
-user4 = User.create!(
+marion.photo.attach(io: file, filename: ‘marion.png’, content_type: ‘image/png’)
+marion.save
+
+file = URI.open("https://unsplash.com/photos/AzVexpHvuKY")
+marine = User.create!(
   email: "marine@gmail.com",
   password: "azerty",
   first_name: "Marine",
@@ -83,8 +92,11 @@ user4 = User.create!(
   rating_id: rating4.id
 )
 
-URI.open("https://unsplash.com/photos/LWkFHEGpleE")
-user5 = User.create!(
+marine.photo.attach(io: file, filename: ‘marine.png’, content_type: ‘image/png’)
+marine.save
+
+file = URI.open("https://unsplash.com/photos/LWkFHEGpleE")
+marjorie = User.create!(
   email: "marjorie@gmail.com",
   password: "azerty",
   first_name: "Marjorie",
@@ -94,8 +106,11 @@ user5 = User.create!(
   rating_id: rating5.id
 )
 
-URI.open("https://unsplash.com/photos/OExQjtxbIpE")
-user6 = User.create!(
+marjorie.photo.attach(io: file, filename: ‘marjorie.png’, content_type: ‘image/png’)
+marjorie.save
+
+file = URI.open("https://unsplash.com/photos/OExQjtxbIpE")
+megane = User.create!(
   email: "megane@gmail.com",
   password: "azerty",
   first_name: "Megane",
@@ -105,8 +120,11 @@ user6 = User.create!(
   rating_id: rating6.id
 )
 
+margaux.photo.attach(io: file, filename: ‘margaux.png’, content_type: ‘image/png’)
+margaux.save
+
 URI.open("https://unsplash.com/photos/KrR7xEn4HV8")
-user7 = User.create!(
+clemence = User.create!(
   email: "clemence@gmail.com",
   password: "azerty",
   first_name: "Clémence",
@@ -116,8 +134,11 @@ user7 = User.create!(
   rating_id: rating7.id
 )
 
+clemence.photo.attach(io: file, filename: ‘clemence.png’, content_type: ‘image/png’)
+clemence.save
+
 URI.open("https://unsplash.com/photos/niH7Z81S44g")
-user8 = User.create!(
+melanie = User.create!(
   email: "melanie@gmail.com",
   password: "azerty",
   first_name: "Mélanie",
@@ -127,8 +148,11 @@ user8 = User.create!(
   rating_id: rating8.id
 )
 
+melanie.photo.attach(io: file, filename: ‘melanie.png’, content_type: ‘image/png’)
+melanie.save
+
 URI.open("https://unsplash.com/photos/tLKOj6cNwe0")
-user9 = User.create!(
+julie = User.create!(
   email: "julie@gmail.com",
   password: "azerty",
   first_name: "Julie",
@@ -139,7 +163,7 @@ user9 = User.create!(
 )
 
 URI.open("https://unsplash.com/photos/EGXESvDSAFY")
-user10 = User.create!(
+stephanie = User.create!(
   email: "stephanie@gmail.com",
   password: "azerty",
   first_name: "Stéphanie",
@@ -148,6 +172,9 @@ user10 = User.create!(
   phone_number: "0344506542",
   rating_id: rating10.id
 )
+
+stephanie.photo.attach(io: file, filename: ‘stephanie.png’, content_type: ‘image/png’)
+stephanie.save
 
 puts "create trips"
 
