@@ -5,7 +5,21 @@
           <div class="card-trip-title">
             <h2 class="text-dark"><strong><span id="pipe">|</span> <%= trip.starting_point %> > <%= trip.ending_point %></strong></h2>
           </div>
-            <img src="https://cdn-assets.alltrails.com/static-map/production/at-map/50957820/trail-france-paris-paris-d-ouest-en-est-at-map-50957820-1642755268-414x200-2.png" />
+            <% @points = {start:[trip.latitude_start, trip.longitude_start], end:[trip.latitude_end, trip.longitude_end]}%>
+            <% @markers = @points.map do |point| %>
+              <% point.flatten! %>
+              <% {
+                lat: point[1],
+                lng: point[2],
+              }%>
+            <%end %>
+            <div class="map">
+              <div style="width: 100%; height: 140px;"
+                data-controller="mapbox"
+                data-mapbox-markers-value="<%= @markers.to_json %>"
+                data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+            </div>
             <%= cl_image_tag trip.user.photo.key, class:"card-trip-user avatar-bordered" %>
           <div class="mx-3 mb-5 card-trip-infos">
             <div class="d-flex justify-content-between">

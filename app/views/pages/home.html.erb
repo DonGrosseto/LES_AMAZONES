@@ -29,9 +29,12 @@
       <% end %>
   </div>
 
-
-  <h3 class="text-center mt-3 text-dark">Trajets au départ de <%= current_user.address %></h3>
-   <%= render "shared/tripscard"  %>
+  <%if @trips.empty? %>
+    <p></p>
+  <%else %>
+    <h3 class="text-center mt-3 text-dark">Trajets au départ de <%= current_user.address %></h3>
+    <%= render "shared/tripscard"  %>
+  <%end %>
 </div>
 <div class="navbar-amz fixed-bottom w-100">
     <%= image_tag "etoile.png", width:"30px", height:"30px"%>
