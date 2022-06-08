@@ -6,3 +6,15 @@
   border-radius: 10%;
   cursor: pointer;
 }
+
+.mapboxgl-ctrl-geocoder--input{
+  background-color:#FBFBFB;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  padding: 4px;
+}
+
+.mapboxgl-ctrl-geocoder:first-child{
+  z-index: 1001;
+}
