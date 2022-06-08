@@ -72,16 +72,25 @@ user4 = User.create!(
   rating_id: rating4.id
 )
 
-user4 = User.create!(
-  email: "marine@gmail",
+user5 = User.create!(
+  email: "marjorie@gmail",
   password: "azerty",
-  first_name: "Marine",
-  last_name: "Dupert",
-  address: "Lille",
-  phone_number: "0102030409",
+  first_name: "Marjorie",
+  last_name: "Delbrand",
+  address: "herlies",
+  phone_number: "0104556432",
   rating_id: rating5.id
 )
 
+user5 = User.create!(
+  email: "megane@gmail",
+  password: "azerty",
+  first_name: "Megane",
+  last_name: "Delbrand",
+  address: "",
+  phone_number: "0104556542",
+  rating_id: rating5.id
+)
 chat1 = Chatroom.create!
 
 puts "create trips"
@@ -96,20 +105,69 @@ trip = Trip.create!(
   chatroom_id: chat1.id
 )
 
+trip1 = Trip.create!(
+  starting_point: "Lille",
+  ending_point: "Lomme",
+  date: Date.new(2022, 4, 8),
+  time: Time.now,
+  transport: "vélo",
+  user_id: user.id,
+  chatroom_id: chat1.id
+)
+
+trip2 = Trip.create!(
+  starting_point: "Lille",
+  ending_point: "Lomme",
+  date: Date.new(2022, 4, 9),
+  time: Time.now,
+  transport: "voiture",
+  user_id: user.id,
+  chatroom_id: chat1.id
+)
+
+trip3 = Trip.create!(
+  starting_point: "Lille",
+  ending_point: "Lomme",
+  date: Date.new(2022, 4, 10),
+  time: Time.now,
+  transport: "métro",
+  user_id: user.id,
+  chatroom_id: chat1.id
+)
+
+trip4 = Trip.create!(
+  starting_point: "Lille",
+  ending_point: "Lomme",
+  date: Date.new(2022, 4, 2),
+  time: Time.now,
+  transport: "métro",
+  user_id: user.id,
+  chatroom_id: chat1.id
+)
+
+trip5 = Trip.create!(
+  starting_point: "Lille",
+  ending_point: "Lomme",
+  date: Date.new(2022, 4, 2),
+  time: Time.now,
+  transport: "métro",
+  user_id: user.id,
+  chatroom_id: chat1.id
+)
 Booking.destroy_all
 
 Booking.create!(
   trip_id: trip.id,
-  user_id: user.id
+  user_id: user1.id, user2.id
 )
 
 Booking.create!(
-  trip_id: trip.id,
-  user_id: user1.id
+  trip_id: trip1.id,
+  user_id: user3.id, user4.id
 )
 
 Booking.create!(
-  trip_id: trip.id,
+  trip_id: trip2.id,
   user_id: user2.id
 )
 
