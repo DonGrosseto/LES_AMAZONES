@@ -10,10 +10,8 @@
 
 <div class="container mt-5" style="width: 80%">
   <%= simple_form_for(@trip) do |f| %>
-    <%= f.input :starting_point, label: false, input_html: { data: { geocoder_target: "address" }, class: "d-none" },
-       wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-    <%= f.input :ending_point, label: false, input_html: { data: { geocoder_target: "address" }, class: "d-none" },
-       wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+    <%= f.input :starting_point,placeholder: 'Départ', label: false %>
+    <%= f.input :ending_point, placeholder: 'Arrivée',label: false %>
 
     <%= f.input :date, placeholder: 'Date', label: false, as: :date, html5: true%>
     <%= f.input :time, label: false, as: :time,html5: true %>
