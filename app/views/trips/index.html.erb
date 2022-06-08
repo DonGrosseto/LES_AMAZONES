@@ -1,3 +1,10 @@
+<div class="trips-header text-center mt-2 py-2">
+  <%if params[:starting_point].present? && params[:ending_point].present? %>
+    <h1><%= params[:starting_point] %> > <%= params[:ending_point] %></h1>
+  <%else %>
+    <h1>Tous les trajets</h1>
+  <%end %>
+</div>
 <div class="container">
    <%= render "shared/tripscard"  %>
 </div>

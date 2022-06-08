@@ -5,21 +5,12 @@
   width: 235px;
   margin: 0 auto;
   border-radius: 16px;
-  position: relative;
 
 }
 
-.card-trips {
+.card-trip-position {
   position: relative;
 
-}
-
-
-
-.card-trip>img {
-  height: 100px;
-  width: 100%;
-  object-fit: cover;
 }
 
 .card-trip h2 {
@@ -57,6 +48,11 @@
   opacity: 1;
 }
 
+.trips-header {
+  border-bottom: 2px solid $yellow;
+  margin-bottom: 0;
+}
+
 
 .card-trip .card-trip-title {
   padding: 16px;
@@ -67,9 +63,10 @@
 .card-trip .card-trip-user {
   position: absolute;
   right: 43%;
-  bottom: 40%;
+  bottom: 35%;
   width: 40px;
   height: 40px;
+  object-fit: cover;
 }
 
 
