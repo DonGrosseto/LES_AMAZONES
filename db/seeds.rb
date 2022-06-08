@@ -27,8 +27,9 @@ rating9 = Rating.create
 rating10 = Rating.create
 
 puts "create users"
+puts "1"
 
-URI.open("https://unsplash.com/photos/A77FAov-OzI")
+URI.open("https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=80")
 user = User.create!(
   email: "marie@gmail.com",
   password: "azerty",
@@ -38,8 +39,8 @@ user = User.create!(
   phone_number: "0102030405",
   rating_id: rating.id
 )
-
-file = URI.open("https://unsplash.com/photos/RDcEWH5hSDE")
+puts "2"
+file = URI.open("https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 margaux = User.create!(
   email: "margaux@gmail.com",
   password: "azerty",
@@ -49,11 +50,11 @@ margaux = User.create!(
   phone_number: "0102030406",
   rating_id: rating1.id
 )
-
-margaux.photo.attach(io: file, filename: ‘margaux.png’, content_type: ‘image/png’)
+puts "3"
+margaux.photo.attach(io: file, filename: "margaux.png", content_type: "image/png")
 margaux.save
 
-file = URI.open("https://unsplash.com/photos/RtVGS4vGkgM")
+file = URI.open("https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 chloe = User.create!(
   email: "chloe@gmail.com",
   password: "azerty",
@@ -64,10 +65,10 @@ chloe = User.create!(
   rating_id: rating2.id
 )
 
-chloe.photo.attach(io: file, filename: ‘chloe.png’, content_type: ‘image/png’)
+chloe.photo.attach(io: file, filename: "chloe.png", content_type: "image/png")
 chloe.save
-
-file = URI.open("https://unsplash.com/photos/00ByEXKcSkA")
+puts "4"
+file = URI.open("https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80")
 marion = User.create!(
   email: "marion@gmail.com",
   password: "azerty",
@@ -78,10 +79,10 @@ marion = User.create!(
   rating_id: rating3.id
 )
 
-marion.photo.attach(io: file, filename: ‘marion.png’, content_type: ‘image/png’)
+marion.photo.attach(io: file, filename: "marion.png", content_type: "image/png")
 marion.save
-
-file = URI.open("https://unsplash.com/photos/AzVexpHvuKY")
+puts "5"
+file = URI.open("https://images.unsplash.com/photo-1563132337-f159f484226c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 marine = User.create!(
   email: "marine@gmail.com",
   password: "azerty",
@@ -92,10 +93,10 @@ marine = User.create!(
   rating_id: rating4.id
 )
 
-marine.photo.attach(io: file, filename: ‘marine.png’, content_type: ‘image/png’)
+marine.photo.attach(io: file, filename: "marine.png", content_type: "image/png")
 marine.save
-
-file = URI.open("https://unsplash.com/photos/LWkFHEGpleE")
+puts "6"
+file = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 marjorie = User.create!(
   email: "marjorie@gmail.com",
   password: "azerty",
@@ -106,10 +107,10 @@ marjorie = User.create!(
   rating_id: rating5.id
 )
 
-marjorie.photo.attach(io: file, filename: ‘marjorie.png’, content_type: ‘image/png’)
+marjorie.photo.attach(io: file, filename: "marjorie.png", content_type: "image/png")
 marjorie.save
-
-file = URI.open("https://unsplash.com/photos/OExQjtxbIpE")
+puts "7"
+file = URI.open("https://images.unsplash.com/photo-1502764613149-7f1d229e230f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80")
 megane = User.create!(
   email: "megane@gmail.com",
   password: "azerty",
@@ -120,10 +121,10 @@ megane = User.create!(
   rating_id: rating6.id
 )
 
-megane.photo.attach(io: file, filename: ‘megane.png’, content_type: ‘image/png’)
+megane.photo.attach(io: file, filename: "megane.png", content_type: "image/png")
 megane.save
-
-URI.open("https://unsplash.com/photos/KrR7xEn4HV8")
+puts "8"
+file = URI.open("https://images.unsplash.com/photo-1574297500578-afae55026ff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80")
 clemence = User.create!(
   email: "clemence@gmail.com",
   password: "azerty",
@@ -134,10 +135,10 @@ clemence = User.create!(
   rating_id: rating7.id
 )
 
-clemence.photo.attach(io: file, filename: ‘clemence.png’, content_type: ‘image/png’)
+clemence.photo.attach(io: file, filename: "clemence.png", content_type: "image/png")
 clemence.save
-
-URI.open("https://unsplash.com/photos/niH7Z81S44g")
+puts "9"
+file = URI.open("https://media.istockphoto.com/photos/pretty-woman-alone-with-nature-picture-id808214016?k=20&m=808214016&s=612x612&w=0&h=1JPPMLRjk4xaVO7rJ8yeqes2wH6qPHLP94a11G4HRu4=")
 melanie = User.create!(
   email: "melanie@gmail.com",
   password: "azerty",
@@ -148,10 +149,10 @@ melanie = User.create!(
   rating_id: rating8.id
 )
 
-melanie.photo.attach(io: file, filename: ‘melanie.png’, content_type: ‘image/png’)
+melanie.photo.attach(io: file, filename: "melanie.png", content_type: "image/png")
 melanie.save
-
-URI.open("https://unsplash.com/photos/tLKOj6cNwe0")
+puts "10"
+file = URI.open("https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 julie = User.create!(
   email: "julie@gmail.com",
   password: "azerty",
@@ -162,10 +163,10 @@ julie = User.create!(
   rating_id: rating9.id
 )
 
-julie.photo.attach(io: file, filename: ‘julie.png’, content_type: ‘image/png’)
+julie.photo.attach(io: file, filename: "julie.png", content_type: "image/png")
 julie.save
-
-URI.open("https://unsplash.com/photos/EGXESvDSAFY")
+puts "11"
+file = URI.open("https://images.unsplash.com/photo-1519713880332-91cfe19a59dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 stephanie = User.create!(
   email: "stephanie@gmail.com",
   password: "azerty",
@@ -176,8 +177,23 @@ stephanie = User.create!(
   rating_id: rating10.id
 )
 
-stephanie.photo.attach(io: file, filename: ‘stephanie.png’, content_type: ‘image/png’)
+stephanie.photo.attach(io: file, filename: "stephanie.png", content_type: "image/png")
 stephanie.save
+puts "users done"
+puts "create chatroom"
+chatroom1 = Chatroom.create
+chatroom2 = Chatroom.create
+chatroom3 = Chatroom.create
+chatroom4 = Chatroom.create
+chatroom5 = Chatroom.create
+chatroom6 = Chatroom.create
+chatroom7 = Chatroom.create
+chatroom8 = Chatroom.create
+chatroom9 = Chatroom.create
+chatroom10 = Chatroom.create
+chatroom = Chatroom.create
+
+puts "chatroom done"
 
 puts "create trips"
 
@@ -197,7 +213,7 @@ trip1 = Trip.create!(
   date: Date.new(2022, 4, 8),
   time: Time.now,
   transport: "piéton",
-  user_id: user.id,
+  user_id: margaux.id,
   chatroom_id: chatroom2.id
 )
 
@@ -207,7 +223,7 @@ trip2 = Trip.create!(
   date: Date.new(2022, 4, 9),
   time: Time.now,
   transport: "voiture",
-  user_id: user.id,
+  user_id: chloe.id,
   chatroom_id: chatroom3.id
 )
 
@@ -217,7 +233,7 @@ trip3 = Trip.create!(
   date: Date.new(2022, 4, 10),
   time: Time.now,
   transport: "voiture",
-  user_id: user.id,
+  user_id: marion.id,
   chatroom_id: chatroom4.id
 )
 
@@ -227,7 +243,7 @@ trip4 = Trip.create!(
   date: Date.new(2022, 4, 2),
   time: Time.now,
   transport: "vélo",
-  user_id: user.id,
+  user_id: marine.id,
   chatroom_id: chatroom5.id
 )
 
@@ -237,7 +253,7 @@ trip5 = Trip.create!(
   date: Date.new(2022, 4, 2),
   time: Time.now,
   transport: "taxi",
-  user_id: user.id,
+  user_id: marjorie.id,
   chatroom_id: chatroom6.id
 )
 
@@ -247,7 +263,7 @@ trip6 = Trip.create!(
   date: Date.new(2022, 4, 9),
   time: Time.now,
   transport: "taxi",
-  user_id: user.id,
+  user_id: megane.id,
   chatroom_id: chatroom7.id
 )
 
@@ -257,7 +273,7 @@ trip7 = Trip.create!(
   date: Date.new(2022, 4, 7),
   time: Time.now,
   transport: "métro",
-  user_id: user.id,
+  user_id: clemence.id,
   chatroom_id: chatroom8.id
 )
 
@@ -267,8 +283,8 @@ trip8 = Trip.create!(
   date: Date.new(2022, 4, 8),
   time: Time.now,
   transport: "métro",
-  user_id: user.id,
-  chatroom_id: chatroom8.id
+  user_id: melanie.id,
+  chatroom_id: chatroom9.id
 )
 
 trip9 = Trip.create!(
@@ -277,8 +293,8 @@ trip9 = Trip.create!(
   date: Date.new(2022, 4, 6),
   time: Time.now,
   transport: "métro",
-  user_id: user.id,
-  chatroom_id: chatroom8.id
+  user_id: julie.id,
+  chatroom_id: chatroom10.id
 )
 
 trip10 = Trip.create!(
@@ -287,101 +303,51 @@ trip10 = Trip.create!(
   date: Date.new(2022, 4, 6),
   time: Time.now,
   transport: "métro",
-  user_id: user.id,
-  chatroom_id: chatroom8.id
+  user_id: stephanie.id,
+  chatroom_id: chatroom.id
 )
+
+puts "bookings done !"
 
 Booking.destroy_all
 
+
 Booking.create!(
   trip_id: trip.id,
-  user_id: user1.id,
+  user_id: user.id,
+)
+Booking.create!(
+  trip_id: trip1.id,
+  user_id: user.id,
+)
+Booking.create!(
+  trip_id: trip2.id,
+  user_id: user.id,
 )
 
 Booking.create!(
   trip_id: trip1.id,
-  user_id: user3.id,
+  user_id: marjorie.id,
 )
 
 Booking.create!(
   trip_id: trip2.id,
-  user_id: user2.id
+  user_id: marjorie.id
+)
+
+Booking.create!(
+  trip_id: trip1.id,
+  user_id: marine.id
 )
 
 Booking.create!(
   trip_id: trip.id,
-  user_id: user3.id
+  user_id: marine.id
 )
 
 Booking.create!(
-  trip_id: trip.id,
-  user_id: user4.id
+  trip_id: trip2.id,
+  user_id: marine.id
 )
 
 puts "bookings done"
-
-chatroom1 = Chatroom.create
-Trip.create(
-  starting_point: "Haubourdin",
-  ending_point: "Lomme",
-  date: Date.new(2022, 4, 7),
-  time: Time.now,
-  transport: "vélo",
-  user_id: user.id,
-  chatroom_id: chatroom.id
-)
-
-chatroom2 = Chatroom.create
-Trip.create(
-  starting_point: "Lille",
-  ending_point: "Lomme",
-  date: Date.new(2022, 4, 8),
-  time: Time.now,
-  transport: "pieton",
-  user_id: user.id,
-  chatroom_id: chatroom.id
-)
-
-chatroom3 = Chatroom.create
-Trip.create(
-  starting_point: "Paris 7eme",
-  ending_point: "Paris 9eme",
-  date: Date.new(2022, 4, 12),
-  time: Time.now,
-  transport: "Voiture",
-  user_id: user.id,
-  chatroom_id: chatroom.id
-)
-
-chatroom4 = Chatroom.create
-Trip.create(
-  starting_point: "Lille",
-  ending_point: "Lomme",
-  date: Date.new(2022, 4, 9),
-  time: Time.now,
-  transport: "Train",
-  user_id: user.id,
-  chatroom_id: chatroom.id
-)
-
-chatroom5 = Chatroom.create
-Trip.create(
-  starting_point: "Lille",
-  ending_point: "Wambrechies",
-  date: Date.new(2022, 4, 12),
-  time: Time.now,
-  transport: "métro",
-  user_id: user.id,
-  chatroom_id: chatroom.id
-)
-
-chatroom6 = Chatroom.create
-Trip.create(
-  starting_point: "Herlies",
-  ending_point: "Lompret",
-  date: Date.new(2022, 4, 2),
-  time: Time.now,
-  transport: "taxi",
-  user_id: user.id,
-  chatroom_id: chatroom.id
-)
