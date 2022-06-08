@@ -29,8 +29,8 @@ rating10 = Rating.create
 puts "create users"
 puts "1"
 
-URI.open("https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=80")
-user = User.create!(
+file = URI.open("https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=80")
+marie = User.new(
   email: "marie@gmail.com",
   password: "azerty",
   first_name: "Marie",
@@ -39,9 +39,13 @@ user = User.create!(
   phone_number: "0102030405",
   rating_id: rating.id
 )
+marie.photo.attach(io: file, filename: "user.png", content_type: "image/png")
+marie.save
+
 puts "2"
 file = URI.open("https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
-margaux = User.create!(
+
+margaux = User.new(
   email: "margaux@gmail.com",
   password: "azerty",
   first_name: "Margaux",
@@ -55,7 +59,8 @@ margaux.photo.attach(io: file, filename: "margaux.png", content_type: "image/png
 margaux.save
 
 file = URI.open("https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
-chloe = User.create!(
+
+chloe = User.new(
   email: "chloe@gmail.com",
   password: "azerty",
   first_name: "Chloe",
@@ -69,7 +74,8 @@ chloe.photo.attach(io: file, filename: "chloe.png", content_type: "image/png")
 chloe.save
 puts "4"
 file = URI.open("https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80")
-marion = User.create!(
+
+marion = User.new(
   email: "marion@gmail.com",
   password: "azerty",
   first_name: "Marion",
@@ -78,12 +84,13 @@ marion = User.create!(
   phone_number: "0102030408",
   rating_id: rating3.id
 )
-
 marion.photo.attach(io: file, filename: "marion.png", content_type: "image/png")
 marion.save
+
 puts "5"
 file = URI.open("https://images.unsplash.com/photo-1563132337-f159f484226c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
-marine = User.create!(
+
+marine = User.new(
   email: "marine@gmail.com",
   password: "azerty",
   first_name: "Marine",
@@ -97,7 +104,8 @@ marine.photo.attach(io: file, filename: "marine.png", content_type: "image/png")
 marine.save
 puts "6"
 file = URI.open("https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
-marjorie = User.create!(
+
+marjorie = User.new(
   email: "marjorie@gmail.com",
   password: "azerty",
   first_name: "Marjorie",
@@ -111,7 +119,8 @@ marjorie.photo.attach(io: file, filename: "marjorie.png", content_type: "image/p
 marjorie.save
 puts "7"
 file = URI.open("https://images.unsplash.com/photo-1502764613149-7f1d229e230f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80")
-megane = User.create!(
+
+megane = User.new(
   email: "megane@gmail.com",
   password: "azerty",
   first_name: "Megane",
@@ -125,7 +134,8 @@ megane.photo.attach(io: file, filename: "megane.png", content_type: "image/png")
 megane.save
 puts "8"
 file = URI.open("https://images.unsplash.com/photo-1574297500578-afae55026ff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80")
-clemence = User.create!(
+
+clemence = User.new(
   email: "clemence@gmail.com",
   password: "azerty",
   first_name: "Clémence",
@@ -139,7 +149,8 @@ clemence.photo.attach(io: file, filename: "clemence.png", content_type: "image/p
 clemence.save
 puts "9"
 file = URI.open("https://media.istockphoto.com/photos/pretty-woman-alone-with-nature-picture-id808214016?k=20&m=808214016&s=612x612&w=0&h=1JPPMLRjk4xaVO7rJ8yeqes2wH6qPHLP94a11G4HRu4=")
-melanie = User.create!(
+
+melanie = User.new(
   email: "melanie@gmail.com",
   password: "azerty",
   first_name: "Mélanie",
@@ -153,7 +164,8 @@ melanie.photo.attach(io: file, filename: "melanie.png", content_type: "image/png
 melanie.save
 puts "10"
 file = URI.open("https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
-julie = User.create!(
+
+julie = User.new(
   email: "julie@gmail.com",
   password: "azerty",
   first_name: "Julie",
@@ -167,7 +179,8 @@ julie.photo.attach(io: file, filename: "julie.png", content_type: "image/png")
 julie.save
 puts "11"
 file = URI.open("https://images.unsplash.com/photo-1519713880332-91cfe19a59dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
-stephanie = User.create!(
+
+stephanie = User.new(
   email: "stephanie@gmail.com",
   password: "azerty",
   first_name: "Stéphanie",
