@@ -16,6 +16,13 @@
 
 }
 
+.dashboard-icon {
+  img{
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 .tab-inactive {
 
   font-size: 13px;
