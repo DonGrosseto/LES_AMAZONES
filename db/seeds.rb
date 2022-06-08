@@ -241,20 +241,50 @@ trip5 = Trip.create!(
   chatroom_id: chatroom6.id
 )
 
-trip5 = Trip.create!(
+trip6 = Trip.create!(
   starting_point: "Paris 7éme",
   ending_point: "Paris 9éme",
-  date: Date.new(2022, 4, 12),
+  date: Date.new(2022, 4, 9),
   time: Time.now,
   transport: "taxi",
   user_id: user.id,
   chatroom_id: chatroom7.id
 )
 
-trip5 = Trip.create!(
+trip7 = Trip.create!(
   starting_point: "Lille",
   ending_point: "Wambrechies",
-  date: Date.new(2022, 4, 12),
+  date: Date.new(2022, 4, 7),
+  time: Time.now,
+  transport: "métro",
+  user_id: user.id,
+  chatroom_id: chatroom8.id
+)
+
+trip8 = Trip.create!(
+  starting_point: "Paris 5eme",
+  ending_point: "Paris 16eme",
+  date: Date.new(2022, 4, 8),
+  time: Time.now,
+  transport: "métro",
+  user_id: user.id,
+  chatroom_id: chatroom8.id
+)
+
+trip9 = Trip.create!(
+  starting_point: "Paris 11eme",
+  ending_point: "Paris 17eme",
+  date: Date.new(2022, 4, 6),
+  time: Time.now,
+  transport: "métro",
+  user_id: user.id,
+  chatroom_id: chatroom8.id
+)
+
+trip10 = Trip.create!(
+  starting_point: "Paris 12eme",
+  ending_point: "Paris 18eme",
+  date: Date.new(2022, 4, 6),
   time: Time.now,
   transport: "métro",
   user_id: user.id,
