@@ -13,14 +13,16 @@
   </div>
   <%= simple_form_for [@chatroom, @message],
     remote: true,
-    html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex"} do |f|
+    html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex mb-5"} do |f|
   %>
     <%= f.input :content,
       label: false,
       placeholder: "Message",
-      wrapper_html: {class: "flex-grow-1"}
+      wrapper_html: {class: "flex-grow-1"},
+      style:"height: 20px",
+      class:"form-control"
     %>
-    <%= f.submit "Envoyer", class: "button-red" %>
+    <%= f.submit "Envoyer", class: "button-red", style:"height: 40px" %>
   <% end %>
 </div>
 <div class="navbar-amz fixed-bottom w-100">

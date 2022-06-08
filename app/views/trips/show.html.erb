@@ -46,7 +46,7 @@
   </div>
     <% if @booking  %>
       <div class="text-center"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete, class: "button-red" %></div>
-      <div class="text-center"><%= link_to "Chat", chatroom_path(@trip.chatroom_id), class: "button-yellow" %></div>
+      <div class="text-center"><%= link_to "Chat", chatroom_path(@trip.chatroom.id), class: "button-yellow" %></div>
     <% else %>
       <div class="text-center">
         <%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post, class: "button-red" %>

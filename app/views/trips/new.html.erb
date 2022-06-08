@@ -25,11 +25,12 @@
 
       <%= f.collection_radio_buttons :transport, [['piéton', "  "], ['vélo', ' '], ['voiture', ' '], ['taxi', ' '], ['métro', ' ']], :first, :second , legend_tag: false, item_label_class: "d-none" %>
     </div>
-    <div class="d-flex justify-content-center mt-5">
+    <div class="d-flex justify-content-center m-5">
       <%= f.submit "Créer un trajet", class: "button-red" %>
     </div>
   <% end %>
 </div>
+<br>
 <div class="navbar-amz fixed-bottom w-100">
   <%= image_tag "etoile.png", width:"30px", height:"30px"%>
   <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item-active"  %>
