@@ -37,13 +37,13 @@
   <%end %>
 </div>
 <div class="navbar-amz fixed-bottom w-100">
+  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
+  <%= link_to "Rechercher", root_path, class:"navbar-item-active"  %>
+  <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
+  <% if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% else %>
     <%= image_tag "etoile.png", width:"30px", height:"30px"%>
-    <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
-    <%= link_to "Rechercher", root_path, class:"navbar-item-active"  %>
-    <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
-    <% if user_signed_in? %>
-      <%= cl_image_tag current_user.photo.key, class: "avatar"%>
-    <% else %>
-      <%= image_tag "etoile.png", width:"30px", height:"30px"%>
-    <% end  %>
-  </div>
+  <% end  %>
+</div>
