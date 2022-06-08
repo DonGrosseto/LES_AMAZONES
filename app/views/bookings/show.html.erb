@@ -1,0 +1,60 @@
+<div class="container">
+  <div class= "d-flex">
+    <%= image_tag "logofinal.png", class: "small_logo"%>
+    <div class="m-2">
+    <h6 class="mt-4" style="font-size: 15px">Trajet du <%= @trip.date.strftime("%m/%d/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h6>
+    <h3 class= "mt-2"> <%= @trip.starting_point.capitalize %> > <%= @trip.ending_point.capitalize %></h3>
+    </div>
+  </div>
+
+  <div class="divider_bar_yellow my-2" style="width: 100%">
+  </div>
+
+  <div class="map m-2">
+    <div style="width: 100%; height: 200px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+  <h6 class="mt-3"> Les amazones participantes</h6>
+  <div class="container p-3">
+    <% @trip.bookings.each do |booking| %>
+      <div class="d-flex m-2 justify-content-between">
+        <div class="d-flex">
+          <%= cl_image_tag booking.user.photo.key, class: "avatar"%>
+          <p class="m-2"><%= booking.user.first_name %></p>
+        </div>
+        <p class="my-2">-</p>
+        <p class="m-2"><span style="color: #DC2440" ><%= booking.user.bookings.count %></span>
+          <span style="font-weight: 400">trajets   </span>
+
+          <%= link_to upvote_booking_path(booking), method: :post do %>
+            <%= image_tag "Pouce-vert.png", style: "height:25px; width:25px" %>
+          <% end %>
+
+          <%= link_to downvote_booking_path(booking), method: :post do %>
+            <%= image_tag "Pouce-rouge.png", style: "height:25px; width:25px" %>
+          <% end %>
+        </p>
+      </div>
+    <%end  %>
+
+  </div>
+  <div class="text-center">
+    <%= link_to "Valider", trip_bookings_path(@trip), class: "button-red" %>
+  </div>
+
+</div>
+<div class="navbar-amz fixed-bottom w-100">
+  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
+  <%= link_to "Rechercher", root_path, class:"navbar-item"  %>
+  <%= link_to "Mes trajets", dashboard_path, class:"navbar-item-active"%>
+  <% if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% else %>
+    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
+</div>

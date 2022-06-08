@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_06_131634) do
+ActiveRecord::Schema.define(version: 2022_06_07_134651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,8 @@ ActiveRecord::Schema.define(version: 2022_06_06_131634) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "trip_id", null: false
-    t.bigint "rating_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["rating_id"], name: "index_bookings_on_rating_id"
     t.index ["trip_id"], name: "index_bookings_on_trip_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -70,9 +68,10 @@ ActiveRecord::Schema.define(version: 2022_06_06_131634) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.string "status", default: "Non noté"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "upvote", default: 0
+    t.integer "downvote", default: 0
   end
 
   create_table "reports", force: :cascade do |t|
@@ -116,13 +115,15 @@ ActiveRecord::Schema.define(version: 2022_06_06_131634) do
     t.string "last_name"
     t.string "address"
     t.string "phone_number"
+    t.boolean "admin"
+    t.bigint "rating_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["rating_id"], name: "index_users_on_rating_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "ratings"
   add_foreign_key "bookings", "trips"
   add_foreign_key "bookings", "users"
   add_foreign_key "messages", "chatrooms"
@@ -131,4 +132,5 @@ ActiveRecord::Schema.define(version: 2022_06_06_131634) do
   add_foreign_key "reports", "users"
   add_foreign_key "trips", "chatrooms"
   add_foreign_key "trips", "users"
+  add_foreign_key "users", "ratings"
 end

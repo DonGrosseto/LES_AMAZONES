@@ -1,45 +1,62 @@
 <div class="container">
 
-    <h3> Mon tableau de bord </h3>
+  <h3> Mon tableau de bord </h3>
 
-    <div class="d-flex justify-content-around my-3">
-     <strong><%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"tab-active"%></strong>
-     <%= link_to "Mes trajets précédents", mybookings_path(@bookings), class:"tab-inactive" %>
+  <div class="d-flex justify-content-around my-3">
+    <div>
+      <strong><%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"tab-active"%></strong>
+      <div class="divider_bar_yellow"></div>
     </div>
+    <div>
+      <%= link_to "Mes trajets précédents", mybookings_path(@bookings), class:"tab-inactive" %>
+      <div class="divider_bar_white"></div>
+    </div>
+  </div>
 
   <%@bookings.each do |booking| %>
     <div class="card my-3" style="max-width: 540px">
       <div class="row g-0">
         <div class="col-3">
          <% if (booking.trip.transport == "métro") %>
-          <%= image_tag "métro.png",style: "width: 80%; height:80%" %>
+          <%= image_tag "métro.png", style: "width: 100%; height:80%", class:"icone-transport" %>
          <% elsif (booking.trip.transport == "piéton")%>
-          <%= image_tag "pieton.png", style: "width: 80%; height:80%" %>
+          <%= image_tag "pieton.png", style: "width: 100%; height:80%", class:"icone-transport" %>
          <% elsif (booking.trip.transport == "taxi") %>
-          <%= image_tag "taxi.png", style: "width: 80%; height:80%" %>
+          <%= image_tag "taxi.png", style: "width: 100%; height:80%", class:"icone-transport" %>
          <% elsif (booking.trip.transport == "vélo") %>
-          <%= image_tag "velo.png", style: "width: 80%; height:80%" %>
+          <%= image_tag "velo.png", style: "width: 100%; height:80%", class:"icone-transport" %>
          <% else %>
-          <%= image_tag "voiture.png", style: "width: 80%; height:80%" %>
+          <%= image_tag "voiture.png", style: "width: 100%; height:80%", class:"icone-transport" %>
          <% end  %>
         </div>
         <div class="col-6">
             <div class="card-body">
               <h5 class="card-title"></h5>
-              <p class="card-text"> <i class="fa-solid fa-location-dot"></i><strong> <%=booking.trip.starting_point %></strong> </p>
-              <p class="card-text"> <i class="fa-solid fa-flag-checkered"></i><strong> <%=booking.trip.ending_point  %> </strong> </p>
-              <p class="card-text"> <i class="fa-solid fa-calendar-day"></i>  <%= booking.trip.date %> </strong> </p>
-              <p class="card-text"> <i class="fa-solid fa-clock"></i><strong> <%= booking.trip.time %> </strong> </p>
-              <p class="card-text"><small class="text-muted"></small></p>
+              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-location-dot"></i><strong> <%=booking.trip.starting_point %></strong> </p>
+              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-flag-checkered"></i><strong> <%=booking.trip.ending_point  %> </strong> </p>
+              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-calendar-day"></i>  <%= booking.trip.date.strftime("%m/%d/%Y") %> </strong> </p>
+              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-clock"></i><strong> <%= booking.trip.time.strftime("%H:%M") %> </strong> </p>
+              <p class="card-text d-flex justify-content-between"><small class="text-muted"></small></p>
             </div>
         </div>
         <div class="col-3">
           <div class="btn btn-danger">
-            <%= link_to "", trip_path(booking.trip.id), class: "fa-solid fa-circle-info display-1 text-white my-auto" %>
+            <%= link_to "", trip_path(booking.trip.id), class: "fa-solid fa-circle-info display-1 text-white" %>
           </div>
 
         </div>
       </div>
     </div>
   <% end %>
+</div>
+<div class="navbar-amz fixed-bottom w-100">
+  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
+  <%= link_to "Rechercher", root_path, class:"navbar-item"  %>
+  <%= link_to "Mes trajets", dashboard_path, class:"navbar-item-active"%>
+  <% if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% else %>
+    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
 </div>

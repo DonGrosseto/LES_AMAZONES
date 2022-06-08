@@ -1,4 +1,4 @@
-<%= image_tag "logo.jpg", style: "width: 100%" %>
+<%= image_tag "logofinal.png", style: "width: 100%" %>
 
 <div>
   <h1 class="text-center m-2">Les AMAZONES</h1>
@@ -10,8 +10,11 @@
 
 <div class="container mt-5" style="width: 80%">
   <%= simple_form_for(@trip) do |f| %>
-    <%= f.input :starting_point , placeholder: 'Départ', label: false %>
-    <%= f.input :ending_point, placeholder: 'Arrivée', label: false %>
+    <%= f.input :starting_point, label: false, input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+       wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+    <%= f.input :ending_point, label: false, input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+       wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+
     <%= f.input :date, placeholder: 'Date', label: false, as: :date, html5: true%>
     <%= f.input :time, label: false, as: :time,html5: true %>
     <div class="d-flex justify-content-around mt-4" style="height: 50px; width:85%; text-align: center; position:relative; left: 30px">
@@ -25,8 +28,20 @@
 
       <%= f.collection_radio_buttons :transport, [['piéton', "  "], ['vélo', ' '], ['voiture', ' '], ['taxi', ' '], ['métro', ' ']], :first, :second , legend_tag: false, item_label_class: "d-none" %>
     </div>
-    <div class="d-flex justify-content-center mt-5">
+    <div class="d-flex justify-content-center m-5">
       <%= f.submit "Créer un trajet", class: "button-red" %>
     </div>
   <% end %>
+</div>
+<br>
+<div class="navbar-amz fixed-bottom w-100">
+  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item-active"  %>
+  <%= link_to "Rechercher", root_path, class:"navbar-item"  %>
+  <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
+  <% if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% else %>
+    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
 </div>

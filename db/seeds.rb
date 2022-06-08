@@ -22,6 +22,7 @@ rating5 = Rating.create
 
 puts "create users"
 
+URI.open("https://unsplash.com/photos/A77FAov-OzI")
 user = User.create!(
   email: "marie@gmail.com",
   password: "azerty",
@@ -32,6 +33,7 @@ user = User.create!(
   rating_id: rating.id
 )
 
+URI.open("https://unsplash.com/photos/RDcEWH5hSDE")
 user1 = User.create!(
   email: "margaux@gmail.com",
   password: "azerty",
@@ -42,6 +44,7 @@ user1 = User.create!(
   rating_id: rating1.id
 )
 
+URI.open("https://unsplash.com/photos/RtVGS4vGkgM")
 user2 = User.create!(
   email: "chloe@gmail.com",
   password: "azerty",
@@ -52,6 +55,7 @@ user2 = User.create!(
   rating_id: rating2.id
 )
 
+URI.open("https://unsplash.com/photos/00ByEXKcSkA")
 user3 = User.create!(
   email: "marion@gmail.com",
   password: "azerty",
@@ -62,6 +66,7 @@ user3 = User.create!(
   rating_id: rating3.id
 )
 
+URI.open("https://unsplash.com/photos/AzVexpHvuKY")
 user4 = User.create!(
   email: "marine@gmail.com",
   password: "azerty",
@@ -72,6 +77,7 @@ user4 = User.create!(
   rating_id: rating4.id
 )
 
+URI.open("https://unsplash.com/photos/LWkFHEGpleE")
 user5 = User.create!(
   email: "marjorie@gmail.com",
   password: "azerty",
@@ -82,6 +88,7 @@ user5 = User.create!(
   rating_id: rating5.id
 )
 
+URI.open("https://unsplash.com/photos/OExQjtxbIpE")
 user6 = User.create!(
   email: "megane@gmail.com",
   password: "azerty",
@@ -92,6 +99,7 @@ user6 = User.create!(
   rating_id: rating6.id
 )
 
+URI.open("https://unsplash.com/photos/KrR7xEn4HV8")
 user7 = User.create!(
   email: "clemence@gmail.com",
   password: "azerty",
@@ -102,6 +110,7 @@ user7 = User.create!(
   rating_id: rating7.id
 )
 
+URI.open("https://unsplash.com/photos/niH7Z81S44g")
 user8 = User.create!(
   email: "megane@gmail.com",
   password: "azerty",
@@ -112,6 +121,7 @@ user8 = User.create!(
   rating_id: rating8.id
 )
 
+URI.open("https://unsplash.com/photos/tLKOj6cNwe0")
 user9 = User.create!(
   email: "julie@gmail.com",
   password: "azerty",
@@ -122,6 +132,7 @@ user9 = User.create!(
   rating_id: rating9.id
 )
 
+URI.open("https://unsplash.com/photos/EGXESvDSAFY")
 user10 = User.create!(
   email: "stephanie@gmail.com",
   password: "azerty",
