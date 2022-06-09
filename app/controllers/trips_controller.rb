@@ -4,11 +4,12 @@ class TripsController < ApplicationController
     if params[:starting_point].present? && params[:ending_point].present?
       @trips = Trip.where("starting_point ILIKE ?", params[:starting_point])
       @trips = @trips.where("ending_point ILIKE ?", params[:ending_point])
+      @trips = @trips.where(status: "En cours").order(:date)
       if params[:date].present?
         @trips = @trips.where(date: params[:date])
       end
     else
-      @trips = Trip.all
+      @trips = Trip.where(status: "En cours").order(:date)
     end
   end
 
