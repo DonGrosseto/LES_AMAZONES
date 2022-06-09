@@ -45,7 +45,9 @@
   <%= link_to "Rechercher", root_path, class:"navbar-item-active"  %>
   <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
   <% if user_signed_in? %>
-    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+    <%= link_to user_page_path(current_user) do %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+    <% end %>
   <% else %>
     <%= image_tag "etoile.png", width:"30px", height:"30px"%>
   <% end  %>

@@ -33,10 +33,10 @@
         <p class="my-2">-</p>
         <p class="m-2"><span style="color: #DC2440" ><%= user.bookings.count %></span>
           <span style="font-weight: 400">trajets</span>
-          <% if user.rating_id == nil %>
+          <% if user.rating.allvote == 0 %>
             <span>Non noté</span>
           <%else %>
-            <%= user.rating.allvote %>%
+            <%= user.rating.allvote %>
           <%end %>
           <%= image_tag "Pouce-vert.png", style: "height:25px; width:25px" %>
         </p>
@@ -63,9 +63,7 @@
   <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
   <%= link_to "Rechercher", root_path, class:"navbar-item-active"  %>
   <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
-  <% if user_signed_in? %>
-    <%= cl_image_tag current_user.photo.key, class: "avatar"%>
-  <% else %>
-    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
-  <% end  %>
+  <%= link_to user_page_path(current_user) do %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% end %>
 </div>

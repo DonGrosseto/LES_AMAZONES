@@ -1,1 +1,34 @@
-<%= @user.first_name %>
+<div class="trips-header py-3">
+  <h1><%= @user.first_name %></h1>
+</div>
+<div class="container text-center my-3 profile py-3">
+  <%= cl_image_tag @user.photo.key, class: "profile-picture mb-3"%>
+  <div class="card" style="width: 18rem; margin: 0 auto;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <%if @user.rating.allvote == 0%>
+          Non noté
+        <%else %>
+          <%=@user.rating.allvote%>
+        <%end%>
+        <%= image_tag "Pouce-vert.png", style: "height:25px; width:25px" %>
+      </li>
+      <li class="list-group-item"><%= @user.bookings.count %> trajets</li>
+      <li class="list-group-item"><%= @user.address %></li>
+    </ul>
+  </div>
+</div>
+<div class="text-center">
+  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete,  class: "button-red py-2 mt-4" %>
+</div>
+<div class="navbar-amz fixed-bottom w-100 mt-4">
+  <%= link_to root_path do %>
+   <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
+  <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
+  <%= link_to "Rechercher", root_path, class:"navbar-item"  %>
+  <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
+  <%= link_to user_page_path(current_user) do %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar"%>
+  <% end %>
+</div>
