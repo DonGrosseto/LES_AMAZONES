@@ -44,6 +44,7 @@
     <%end  %>
 
   </div>
+  <div style="margin-bottom: 60px">
     <% if @booking  %>
       <div class="text-center"><%= link_to "Chat", chatroom_path(@trip.chatroom.id), class: "button-yellow mb-1" %></div>
       <div class="text-center"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete, class: "button-red mb-4" %></div>
@@ -52,9 +53,12 @@
         <%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post, class: "button-red" %>
       </div>
     <%end %>
+  </div>
 </div>
 <div class="navbar-amz fixed-bottom w-100">
-  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to root_path do %>
+   <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
   <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
   <%= link_to "Rechercher", root_path, class:"navbar-item-active"  %>
   <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
