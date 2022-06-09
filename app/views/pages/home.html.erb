@@ -37,7 +37,9 @@
   <%end %>
 </div>
 <div class="navbar-amz fixed-bottom w-100">
-  <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <%= link_to root_path do %>
+   <%= image_tag "etoile.png", width:"30px", height:"30px"%>
+  <% end  %>
   <%= link_to "Créer un trajet", new_trip_path, class:"navbar-item"  %>
   <%= link_to "Rechercher", root_path, class:"navbar-item-active"  %>
   <%= link_to "Mes trajets", dashboard_path, class:"navbar-item"%>
