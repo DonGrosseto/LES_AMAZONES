@@ -44,18 +44,19 @@
     <%end  %>
 
   </div>
-  <div style="margin-bottom: 60px">
+  <div style="margin-bottom: 180px">
     <% if @booking  %>
       <div class="text-center"><%= link_to "Chat", chatroom_path(@trip.chatroom.id), class: "button-yellow mb-1" %></div>
-      <div class="text-center"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete, class: "button-red mb-4" %></div>
+      <div class="text-center mb-4"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete, class: "button-red mb-4" %></div>
     <% else %>
-      <div class="text-center">
+      <div class="text-center mb-4">
         <%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post, class: "button-red" %>
       </div>
     <%end %>
   </div>
 </div>
-<div class="navbar-amz fixed-bottom w-100">
+
+<div class="navbar-amz fixed-bottom w-100 mt-4">
   <%= link_to root_path do %>
    <%= image_tag "etoile.png", width:"30px", height:"30px"%>
   <% end  %>
