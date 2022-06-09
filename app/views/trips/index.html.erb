@@ -1,6 +1,6 @@
 <div class="trips-header text-center mt-2 py-2">
   <%if params[:starting_point].present? && params[:ending_point].present? %>
-    <h1><%= params[:starting_point] %> > <%= params[:ending_point] %></h1>
+    <h1><%= params[:starting_point].downcase.capitalize %> > <%= params[:ending_point].downcase.capitalize %></h1>
   <%else %>
     <h1>Tous les trajets</h1>
   <%end %>
