@@ -2,7 +2,7 @@
   <div class= "d-flex">
     <%= image_tag "logofinal.png", class: "small_logo"%>
     <div class="m-2">
-    <h6 class="mt-4" style="font-size: 15px">Trajet du <%= @trip.date.strftime("%m/%d/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h6>
+    <h6 class="mt-4" style="font-size: 15px">Trajet du <%= @trip.date.strftime("%d/%m/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h6>
     <h3 class= "mt-2"> <%= @trip.starting_point.capitalize %> > <%= @trip.ending_point.capitalize %></h3>
     </div>
   </div>

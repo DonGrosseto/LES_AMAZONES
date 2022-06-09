@@ -34,7 +34,7 @@
               <h5 class="card-title"></h5>
               <p class="card-text "> <i class="fa-solid fa-location-dot ms-1 me-2"></i><strong> <%=booking.trip.starting_point %></strong> </p>
               <p class="card-text "> <i class="fa-solid fa-flag-checkered me-2"></i><strong> <%=booking.trip.ending_point  %> </strong> </p>
-              <p class="card-text "> <i class="fa-solid fa-calendar-day me-2"></i>  <%= booking.trip.date.strftime("%m/%d/%Y") %> </strong> </p>
+              <p class="card-text "> <i class="fa-solid fa-calendar-day me-2"></i>  <%= booking.trip.date.strftime("%d/%m/%Y") %> </strong> </p>
               <p class="card-text "> <i class="fa-solid fa-clock me-2"></i><strong> <%= booking.trip.time.strftime("%H:%M") %> </strong> </p>
               <p class="card-text "><small class="text-muted"></small></p>
             </div>
