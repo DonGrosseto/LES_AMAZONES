@@ -4,11 +4,11 @@
 
   <div class="d-flex justify-content-around mt-2 mb-4">
     <div>
-      <strong><%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"tab-active"%></strong>
+      <strong><%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"tab-inactive"%></strong>
       <div class="divider_bar_yellow"></div>
     </div>
     <div>
-      <%= link_to "Mes trajets précédents", mybookings_path(@bookings), class:"tab-inactive" %>
+      <%= link_to "Mes trajets précédents", mybookings_path(@bookings), class:"tab-active" %>
       <div class="divider_bar_white"></div>
     </div>
   </div>
