@@ -8,6 +8,9 @@ class TripsController < ApplicationController
       if params[:date].present?
         @trips = @trips.where(date: params[:date])
       end
+      if @trips.length < 1
+        @message = "OoOps il n'y a pas de trajet disponible, à toi d'en créer un"
+      end
     else
       @trips = Trip.where(status: "En cours").order(:date)
     end
