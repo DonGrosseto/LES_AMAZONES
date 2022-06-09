@@ -231,6 +231,7 @@ trip1 = Trip.create!(
   date: Date.new(2022, 7, 8),
   time: Time.now,
   transport: "piéton",
+  status: "Terminé",
   user_id: margaux.id,
   chatroom_id: chatroom2.id
 )
