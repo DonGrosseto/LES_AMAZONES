@@ -50,7 +50,7 @@
       <div class="text-center mb-4"><%= link_to "Quitter le trajet", trip_booking_path(@trip, @booking), method: :delete, class: "button-red mb-4" %></div>
     <% else %>
       <div class="text-center mb-4">
-        <%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post, class: "button-red" %>
+        <%= link_to "Rejoindre le trajet", trip_bookings_path(@trip), method: :post, class: "button-red mb-4" %>
       </div>
     <%end %>
   </div>
