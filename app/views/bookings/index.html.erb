@@ -2,7 +2,7 @@
 
   <h3 class="py-3"> Mon tableau de bord </h3>
 
-  <div class="d-flex justify-content-around my-3">
+  <div class="d-flex justify-content-around mt-2 mb-4">
     <div>
       <strong><%= link_to "Mes trajets en cours", dashboard_path(@bookings), class:"tab-active"%></strong>
       <div class="divider_bar_yellow"></div>
@@ -14,29 +14,29 @@
   </div>
 
   <%@bookings.each do |booking| %>
-    <div class="card my-3" style="max-width: 540px">
+    <div class="card my-2 w-150; h-200" style="max-width: 350px; box-shadow: inset -3px 0px 5px 2px rgb(128 128 128 / 25%); border-radius:50px">
       <div class="row g-0">
         <div class="col-3 dashboard-icon">
          <% if (booking.trip.transport == "métro") %>
-          <%= image_tag "métro.png", style: "width: 100%; height:80%", class:"icone-transport" %>
+          <%= image_tag "métro.png", style: "width: 55px; height:55px", class:"icone-transport" %>
          <% elsif (booking.trip.transport == "piéton")%>
-          <%= image_tag "pieton.png", style: "width: 100%; height:80%", class:"icone-transport" %>
+          <%= image_tag "pieton.png", style: "width: 48px; height:60px", class:"icone-transport" %>
          <% elsif (booking.trip.transport == "taxi") %>
-          <%= image_tag "taxi.png", style: "width: 100%; height:80%", class:"icone-transport" %>
+          <%= image_tag "taxi.png", style: "width: 50px; height:50px", class:"icone-transport" %>
          <% elsif (booking.trip.transport == "vélo") %>
-          <%= image_tag "velo.png", style: "width: 100%; height:80%", class:"icone-transport" %>
+          <%= image_tag "velo.png", style: "width: 55px; height:55px", class:"icone-transport" %>
          <% else %>
-          <%= image_tag "voiture.png", style: "width: 100%; height:80%", class:"icone-transport" %>
+          <%= image_tag "voiture.png", style: "width: 55px; height:55px", class:"icone-transport" %>
          <% end  %>
         </div>
         <div class="col-6">
-            <div class="card-body">
+            <div class="card-body p-1" >
               <h5 class="card-title"></h5>
-              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-location-dot"></i><strong> <%=booking.trip.starting_point %></strong> </p>
-              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-flag-checkered"></i><strong> <%=booking.trip.ending_point  %> </strong> </p>
-              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-calendar-day"></i>  <%= booking.trip.date.strftime("%m/%d/%Y") %> </strong> </p>
-              <p class="card-text d-flex justify-content-between"> <i class="fa-solid fa-clock"></i><strong> <%= booking.trip.time.strftime("%H:%M") %> </strong> </p>
-              <p class="card-text d-flex justify-content-between"><small class="text-muted"></small></p>
+              <p class="card-text "> <i class="fa-solid fa-location-dot ms-1 me-2"></i><strong> <%=booking.trip.starting_point %></strong> </p>
+              <p class="card-text "> <i class="fa-solid fa-flag-checkered me-2"></i><strong> <%=booking.trip.ending_point  %> </strong> </p>
+              <p class="card-text "> <i class="fa-solid fa-calendar-day me-2"></i>  <%= booking.trip.date.strftime("%m/%d/%Y") %> </strong> </p>
+              <p class="card-text "> <i class="fa-solid fa-clock me-2"></i><strong> <%= booking.trip.time.strftime("%H:%M") %> </strong> </p>
+              <p class="card-text "><small class="text-muted"></small></p>
             </div>
         </div>
         <div class="col-3">

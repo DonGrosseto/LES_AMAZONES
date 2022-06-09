@@ -21,6 +21,9 @@
     object-fit: cover;
     object-position: center;
   }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tab-inactive {
@@ -41,13 +44,15 @@
 
 .fa-circle-info {
   position: relative;
-  bottom: -40px;
+  bottom: -30px;
 }
 
-.icone-transport {
-  position: relative;
-  bottom: -12px;
-}
+// .icone-transport {
+//   // position: relative;
+
+//   bottom: -30px;
+//   right: -8px;
+// }
 
 .icone-transport-red>img {
   color: $red;
