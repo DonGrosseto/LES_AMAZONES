@@ -228,7 +228,7 @@ trip = Trip.create!(
 trip1 = Trip.create!(
   starting_point: "Lille",
   ending_point: "Lomme",
-  date: Date.new(2022, 7, 8),
+  date: Date.new(2022, 6, 8),
   time: Time.now,
   transport: "piéton",
   status: "Terminé",
