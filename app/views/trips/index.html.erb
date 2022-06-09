@@ -7,8 +7,15 @@
   <%end %>
 </div>
 <div class="container" style="margin-bottom: 120px">
-<h2><%= @message %></h2>
-   <%= render "shared/tripscard"  %>
+  <h2 class="mt-4 text-warning"><%= @message %></h2>
+
+  <% if @message %>
+    <div class="d-flex justify-content-center">
+      <%= image_tag "message.png", style: "height:350px; width:350px" %>
+    </div>
+  <% end %>
+
+  <%= render "shared/tripscard"  %>
 </div>
 <div class="navbar-amz fixed-bottom w-100 mt-4">
   <%= link_to root_path do %>
