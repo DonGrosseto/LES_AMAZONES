@@ -237,10 +237,10 @@ trip1 = Trip.create!(
 )
 
 trip2 = Trip.create!(
-  starting_point: "Herlies",
-  ending_point: "Lille",
+  starting_point: "Paris 13eme",
+  ending_point: "Vanves",
   date: Date.new(2022, 6, 9),
-  time: Time.now,
+  time: Time.new(2002, 6, 9, 4, 0, 0, "+00:00"),
   transport: "voiture",
   status: "Terminé",
   user_id: chloe.id,
@@ -308,11 +308,11 @@ trip8 = Trip.create!(
 )
 
 trip9 = Trip.create!(
-  starting_point: "Paris 11eme",
-  ending_point: "Paris 17eme",
-  date: Date.new(2022, 8, 6),
-  time: Time.now,
-  transport: "métro",
+  starting_point: "Paris 3eme",
+  ending_point: "Paris 13eme",
+  date: Date.new(2022, 6, 11),
+  time: Time.new(2002, 6, 11, 2, 0, 0, "+00:00"),
+  transport: "piéton",
   user_id: margaux.id,
   chatroom_id: chatroom10.id
 )
