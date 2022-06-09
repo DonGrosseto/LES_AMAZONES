@@ -29,7 +29,7 @@ rating3 = Rating.create
 puts "create users"
 puts "1"
 
-file = URI.open("https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=80")
+file = URI.open("https://images.unsplash.com/photo-1563132337-f159f484226c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
 marie = User.new(
   email: "marie@gmail.com",
   password: "azerty",
