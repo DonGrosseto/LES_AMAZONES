@@ -5,7 +5,7 @@
 <h3 class="p-2" style="font-size: 22px">Informations sur votre trajet</h3>
 
 <div class="container">
-  <h4 class= "text-center" style="color: #DC2440; font-size: 15px">Le <%= @trip.date.strftime("%m/%d/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h4>
+  <h4 class= "text-center" style="color: #DC2440; font-size: 15px">Le <%= @trip.date.strftime("%d/%m/%Y") %> à <%= @trip.time.strftime("%H:%M") %></h4>
   <h3 class= "mt-2"> <%= @trip.starting_point.capitalize %> > <%= @trip.ending_point.capitalize %></h3>
 
   <div class="divider_bar_yellow my-2 ">
