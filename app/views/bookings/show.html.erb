@@ -21,27 +21,29 @@
   <h6 class="mt-3"> Les amazones participantes</h6>
   <div class="container p-3">
     <% @trip.bookings.each do |booking| %>
-      <div class="d-flex m-2 justify-content-between">
-        <div class="d-flex">
-          <%= cl_image_tag booking.user.photo.key, class: "avatar"%>
-          <p class="m-2"><%= booking.user.first_name %></p>
+      <% if booking.user != current_user %>
+        <div class="d-flex m-2 justify-content-between">
+          <div class="d-flex">
+            <%= cl_image_tag booking.user.photo.key, class: "avatar"%>
+            <p class="m-2"><%= booking.user.first_name %></p>
+          </div>
+          <p class="my-2">-</p>
+          <div data-controller="vote">
+            <p class="m-2"><span style="color: #DC2440" ><%= booking.user.bookings.count %></span>
+              <span style="font-weight: 400">trajets   </span>
+
+                <%= link_to upvote_booking_path(booking), method: :post do %>
+                  <%= image_tag "Pouce-vert.png", style: "height:25px; width:25px", data: {vote_target: "vote", action: "click->vote#change" }%>
+                <% end %>
+
+                <%= link_to downvote_booking_path(booking), method: :post do %>
+                  <%= image_tag "Pouce-rouge.png", style: "height:25px; width:25px" %>
+                <% end %>
+
+            </p>
+          </div>
         </div>
-        <p class="my-2">-</p>
-        <div data-controller="vote">
-          <p class="m-2"><span style="color: #DC2440" ><%= booking.user.bookings.count %></span>
-            <span style="font-weight: 400">trajets   </span>
-
-              <%= link_to upvote_booking_path(booking), method: :post do %>
-                <%= image_tag "Pouce-vert.png", style: "height:25px; width:25px", data: {vote_target: "vote", action: "click->vote#change" }%>
-              <% end %>
-
-              <%= link_to downvote_booking_path(booking), method: :post do %>
-                <%= image_tag "Pouce-rouge.png", style: "height:25px; width:25px" %>
-              <% end %>
-
-          </p>
-        </div>
-      </div>
+      <% end %>
     <%end  %>
   </div>
   <%# <div class="text-center"> %>
