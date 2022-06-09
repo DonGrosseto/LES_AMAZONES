@@ -360,6 +360,11 @@ Booking.create!(
   user_id: margaux.id
 )
 
+Booking.create!(
+  trip_id: trip2.id,
+  user_id: margaux.id
+)
+
 # Booking.create!(
 #   trip_id: trip.id,
 #   user_id: marine.id
